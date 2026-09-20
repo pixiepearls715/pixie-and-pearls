@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixie & Pearls | Antique & Anti-Tarnish Jewellery</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-cream: #FAF5F3;
+      --soft-pink: #F9ECE9;
+      --card-bg: #FFFFFF;
+      --rose-gold: #C47B78;
+      --rose-gold-light: #E8C9C7;
+      --rose-gold-dark: #A35855;
+      --deep-plum: #3E1D24;
+      --text-muted: #7E646A;
+      --border-color: #EBD6D3;
+      --whatsapp-green: #25D366;
+      --whatsapp-dark: #1EBE5B;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--deep-plum);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, .brand-logo, .vintage-heading {
+      font-family: 'Cormorant Garamond', serif;
+    }
+    /* Announcement Bar */
+    #announcementBar {
+      background: var(--deep-plum);
+      color: #FFF;
+      text-align: center;
+      padding: 8px 15px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(250, 245, 243, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 99;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand-logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--rose-gold-dark);
+      text-decoration: none;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 24px;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--deep-plum);
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: color 0.25s ease;
+    }
+    .nav-links a:hover {
+      color: var(--rose-gold);
+    }
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--deep-plum);
+    }
+    .mobile-drawer {
+      display: none;
+      background: var(--bg-cream);
+      border-bottom: 1px solid var(--border-color);
+      padding: 15px 20px;
+      text-align: center;
+    }
+    .mobile-drawer a {
+      display: block;
+      padding: 10px 0;
+      color: var(--deep-plum);
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border-color);
+    }
+    /* Hero Section */
+    #home {
+      background: radial-gradient(circle at 50% 20%, #FEEFEF 0%, var(--bg-cream) 80%);
+      padding: 70px 20px 60px;
+      text-align: center;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .hero-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      color: var(--rose-gold-dark);
+      font-weight: 700;
+      margin-bottom: 12px;
+      background: rgba(196, 123, 120, 0.12);
+      padding: 5px 16px;
+      border-radius: 30px;
+      border: 1px solid var(--border-color);
+    }
+    .hero-container h1 {
+      font-size: clamp(2.3rem, 5vw, 3.4rem);
+      line-height: 1.2;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--deep-plum);
+    }
+    .hero-container p {
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+    .hero-action-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--rose-gold), var(--rose-gold-dark));
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-gold:hover {
+      box-shadow: 0 6px 20px rgba(163, 88, 85, 0.3);
+      transform: translateY(-2px);
+    }
+    .btn-insta {
+      background: #FFFFFF;
+      border: 1px solid var(--rose-gold);
+      color: var(--rose-gold-dark);
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-insta:hover {
+      background: var(--soft-pink);
+    }
+    .highlights-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding-top: 25px;
+      border-top: 1px dashed var(--border-color);
+    }
+    .highlight-pill {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--rose-gold-dark);
+    }
+    /* Sections */
+    section {
+      padding: 70px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--deep-plum);
+    }
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+    /* Filters */
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--deep-plum);
+      padding: 7px 18px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.25s;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--rose-gold);
+      color: #fff;
+      border-color: var(--rose-gold);
+    }
+    /* Products Grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 25px;
+    }
+    .product-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(62, 29, 36, 0.03);
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(163, 88, 85, 0.1);
+    }
+    .image-container {
+      position: relative;
+      height: 280px;
+      background: #F3EAE8;
+      overflow: hidden;
+    }
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      cursor: zoom-in;
+    }
+    .product-card:hover .image-container img {
+      transform: scale(1.04);
+    }
+    .tag-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(163, 88, 85, 0.9);
+      color: #FFFFFF;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 14px;
+      text-transform: uppercase;
+    }
+    .card-content {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .card-content h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--deep-plum);
+      margin-bottom: 6px;
+    }
+    .product-features {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .feature-tag {
+      background: var(--soft-pink);
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px solid var(--border-color);
+    }
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+    .final-price {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--rose-gold-dark);
+    }
+    .original-price {
+      font-size: 0.9rem;
+      text-decoration: line-through;
+      color: #9C8389;
+    }
+    .whatsapp-order-btn {
+      margin-top: auto;
+      background-color: #25D366;
+      color: #FFFFFF;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background-color 0.25s, transform 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .whatsapp-order-btn:hover {
+      background-color: #1EBE5B;
+    }
+    /* Social Section */
+    .social-showcase {
+      background: var(--soft-pink);
+      border-radius: 16px;
+      padding: 40px 20px;
+      margin: 40px auto;
+      border: 1px solid var(--border-color);
+      text-align: center;
+    }
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 25px;
+    }
+    .social-card {
+      background: #FFF;
+      border-radius: 10px;
+      padding: 15px;
+      border: 1px solid var(--border-color);
+      text-decoration: none;
+      color: var(--deep-plum);
+      font-weight: 600;
+      font-size: 0.88rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.2s;
+    }
+    .social-card:hover {
+      transform: translateY(-3px);
+    }
+    /* About Section */
+    .about-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .about-text h2 {
+      font-size: clamp(2.2rem, 4vw, 2.6rem);
+      margin-bottom: 15px;
+      color: var(--deep-plum);
+    }
+    .about-text p {
+      color: var(--text-muted);
+      margin-bottom: 15px;
+      font-size: 0.98rem;
+    }
+    .quality-points {
+      list-style: none;
+      margin-top: 15px;
+    }
+    .quality-points li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+    }
+    .about-img-frame {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 6px solid #FFFFFF;
+      box-shadow: 0 10px 30px rgba(163, 88, 85, 0.12);
+    }
+    .about-img-frame img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+    /* Contact Section */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 30px;
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 35px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 8px 30px rgba(62, 29, 36, 0.04);
+    }
+    .contact-info-panel h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: var(--deep-plum);
+    }
+    .contact-info-panel p {
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      font-size: 0.92rem;
+    }
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 15px;
+      font-size: 0.92rem;
+    }
+    .info-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--soft-pink);
+      color: var(--rose-gold-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: var(--deep-plum);
+    }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      background: #FAF7F6;
+      outline: none;
+    }
+    .form-btn-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .form-btn-row button {
+      flex: 1;
+      padding: 12px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-send-enquiry {
+      background: var(--rose-gold-dark);
+      color: #fff;
+    }
+    .btn-send-whatsapp {
+      background: #25D366;
+      color: #fff;
+    }
+    /* Floating WhatsApp */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--whatsapp-green);
+      color: #fff;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
+      text-decoration: none;
+    }
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 50px 20px 30px;
+      background: #F8EEEB;
+    }
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+    .footer-col h4 {
+      font-size: 1.2rem;
+      color: var(--deep-plum);
+      margin-bottom: 12px;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col ul li {
+      margin-bottom: 8px;
+    }
+    .footer-col ul li a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover {
+      color: var(--rose-gold-dark);
+    }
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid var(--border-color);
+      padding-top: 20px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    /* Admin Modal (Hidden by default) */
+    #adminModal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      z-index: 9999;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    #adminModal.show {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .admin-box {
+      background: #FFF;
+      width: 100%;
+      max-width: 900px;
+      border-radius: 12px;
+      padding: 25px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .admin-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .admin-tab-btn {
+      background: var(--bg-cream);
+      border: 1px solid var(--border-color);
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+    .admin-tab-btn.active {
+      background: var(--rose-gold-dark);
+      color: #FFF;
+      border-color: var(--rose-gold-dark);
+    }
+    .admin-panel-section {
+      display: none;
+    }
+    .admin-panel-section.active {
+      display: block;
+    }
+    /* Image modal */
+    .image-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 5000;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+    }
+    .image-modal.show {
+      display: flex;
+    }
+    .modal-content-img {
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: 8px;
+    }
+    @media (max-width: 860px) {
+      .about-box, .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div id="announcementBar">✨ Free Pan-India Shipping on Prepaid Orders over ₹1999 | 100% Anti-Tarnish Assurance ✨</div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#home" class="brand-logo" id="brandLogoTrigger">
+        Pixie & Pearls
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Collection</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Quick Links</a></li>
+      </ul>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+    </div>
+    <div class="mobile-drawer" id="mobileDrawer">
+      <a href="#home" class="mob-link">Home</a>
+      <a href="#products" class="mob-link">Collection</a>
+      <a href="#about" class="mob-link">About</a>
+      <a href="#contact" class="mob-link">Quick Links</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home">
+    <div class="hero-container">
+      <span class="hero-badge" id="heroBadgeText">Curated Antique & Anti-Tarnish Collection</span>
+      <h1 id="heroHeadingText">Vintage Luxury That Never Tarnishes</h1>
+      <p id="heroDescText">
+        Step into royal grace with <strong>Pixie & Pearls</strong>. Every piece is handcrafted with delicate vintage charms, 100% anti-tarnish stainless metals, and luminous pearls designed to keep their golden glow intact forever.
+      </p>
+      <div class="hero-action-row">
+        <a href="#products" class="btn-gold" id="heroBtnText">Browse Collection & Order</a>
+        <a href="https://www.instagram.com/pixiepearls71?stkn=MWl3eXp4cGFtbmlyYg==" target="_blank" rel="noopener noreferrer" class="btn-insta">
+          <span>📸</span> Explore @pixiepearls71
+        </a>
+      </div>
+      <div class="highlights-row">
+        <div class="highlight-pill">🛡️ 100% Anti-Tarnish</div>
+        <div class="highlight-pill">💧 Sweat-Resistant</div>
+        <div class="highlight-pill">🌸 Skin Safe & Hypoallergenic</div>
+        <div class="highlight-pill">📦 Safe Pan-India Delivery</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collection Section -->
+  <section id="products">
+    <div class="section-header">
+      <h2>Handcrafted Bestsellers</h2>
+      <p>Direct WhatsApp Ordering • No Cart Hassle • Instant Support</p>
+    </div>
+    <div class="filter-bar">
+      <button class="filter-btn active" data-category="all">All Designs</button>
+      <button class="filter-btn" data-category="necklace">Necklaces & Chokers</button>
+      <button class="filter-btn" data-category="earrings">Earrings & Jhumkas</button>
+      <button class="filter-btn" data-category="rings">Rings & Bangles</button>
+    </div>
+    <div class="products-grid" id="dynamicProductsGrid">
+      <!-- Dynamically injected products -->
+    </div>
+  </section>
+
+  <!-- Social & Media Section -->
+  <section id="socialShowcaseSection">
+    <div class="social-showcase">
+      <span class="hero-badge">Social Media & Videos</span>
+      <h2 style="font-size: 2.2rem; margin-top: 5px; font-family:'Cormorant Garamond',serif;">Watch Our Reels & Shine Tests</h2>
+      <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 10px;">Check our latest Instagram reels and YouTube shorts showcasing water resistance and customer unboxings.</p>
+      <div class="social-grid" id="dynamicSocialGrid">
+        <!-- Dynamically injected social media items -->
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="about-box">
+      <div class="about-text">
+        <span class="hero-badge">Our Craftsmanship</span>
+        <h2>Why Pixie & Pearls?</h2>
+        <p>We believe fine jewellery shouldn't be reserved only for bank lockers. Traditional artificial jewellery loses its shine within weeks due to sweat, humidity, and perfumes.</p>
+        <p>At <strong>Pixie & Pearls</strong>, we marry royal antique aesthetics with high-grade anti-tarnish plating. Wear our chokers, jhumkas, and rings daily without worrying about discoloration.</p>
+        <ul class="quality-points">
+          <li>✨ <div><strong>Advanced Anti-Tarnish Coating:</strong> Protected against oxidation and moisture.</div></li>
+          <li>✨ <div><strong>Authentic Vintage Aesthetic:</strong> Royal antique hues inspired by heritage craftsmanship.</div></li>
+          <li>✨ <div><strong>Hypoallergenic & Lead-Free:</strong> 100% skin friendly for sensitive skin.</div></li>
+        </ul>
+      </div>
+      <div class="about-img-frame">
+        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80" alt="Pixie and Pearls Jewellery Showcase" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Quick Links Section -->
+  <section id="contact">
+    <div class="contact-wrapper">
+      <div class="contact-info-panel">
+        <span class="hero-badge">Direct Contact</span>
+        <h3>We’d Love to Help</h3>
+        <p>Looking for a customized piece, bridal order, or dispatch status? Reach us directly on Instagram or WhatsApp.</p>
+        <div class="info-item">
+          <div class="info-icon">📸</div>
+          <div><strong>Instagram</strong><br /><a href="https://www.instagram.com/pixiepearls71?stkn=MWl3eXp4cGFtbmlyYg==" target="_blank" rel="noopener noreferrer" style="color: var(--rose-gold-dark); text-decoration: none;">@pixiepearls71</a></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">💬</div>
+          <div><strong>Instant WhatsApp Service</strong><br /><span>Fast reply within 30-45 minutes</span></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div><strong>Pan India Shipping</strong><br /><span>Doorstep delivery with tracked shipping</span></div>
+        </div>
+      </div>
+      <form id="inquiryWhatsAppForm">
+        <div class="form-group">
+          <label for="userName">Your Name</label>
+          <input type="text" id="userName" placeholder="Enter your full name" required />
+        </div>
+        <div class="form-group">
+          <label for="userPhone">Your WhatsApp Number</label>
+          <input type="text" id="userPhone" placeholder="Enter phone number" required />
+        </div>
+        <div class="form-group">
+          <label for="userProduct">Interested Product / Category</label>
+          <select id="userProduct">
+            <option value="General Inquiry">General Inquiry / Need Recommendation</option>
+            <option value="Victorian Pearl Choker">Victorian Pearl Choker</option>
+            <option value="Royal Teardrop Pearl Earrings">Royal Teardrop Pearl Earrings</option>
+            <option value="Vintage Rose Stone Ring">Vintage Rose Stone Ring</option>
+            <option value="Royal Antique Pearl Kada">Royal Antique Pearl Kada</option>
+            <option value="Custom Gift Order">Gift Combo Order</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="userMsg">Your Message</label>
+          <textarea id="userMsg" rows="3" placeholder="Tell us what you are looking for..."></textarea>
+        </div>
+        <div class="form-btn-row">
+          <button type="button" id="sendEnquiryBtn" class="btn-send-enquiry">Send Enquiry</button>
+          <button type="button" id="chatWABtn" class="btn-send-whatsapp">Chat on WhatsApp</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp -->
+  <a href="#" id="floatingWABtn" class="floating-whatsapp" title="Chat on WhatsApp">💬</a>
+
+  <!-- Image Zoom Modal -->
+  <div id="imageModal" class="image-modal">
+    <img class="modal-content-img" id="modalImg" src="" alt="Enlarged view">
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4 style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; color:var(--rose-gold-dark);">Pixie & Pearls</h4>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px;">Antique & Anti-Tarnish Artificial Jewellery designed for eternal radiance.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home Page</a></li>
+          <li><a href="#products">Collection</a></li>
+          <li><a href="#about">About Craft</a></li>
+          <li><a href="#contact">Contact & Inquiry</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect Socially</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/pixiepearls71?stkn=MWl3eXp4cGFtbmlyYg==" target="_blank" rel="noopener noreferrer">Instagram: @pixiepearls71</a></li>
+          <li><a href="https://www.youtube.com/@pixiepearls71" target="_blank" rel="noopener noreferrer">YouTube Channel</a></li>
+          <li><a href="#" id="footerWABtn">WhatsApp Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Pixie & Pearls. All rights reserved. Managed by Fairy.
+    </div>
+  </footer>
+
+  <!-- Secret Fairy Admin Dashboard Modal -->
+  <div id="adminModal">
+    <div class="admin-box">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+        <h3 style="color:var(--deep-plum);">👑 Fairy's Secret Admin Dashboard</h3>
+        <button id="closeAdminModal" style="background:none; border:none; font-size:1.5rem; cursor:pointer;">✕</button>
+      </div>
+
+      <!-- Admin Navigation Tabs -->
+      <div class="admin-tabs">
+        <button class="admin-tab-btn active" data-tab="tabAnalytics">📊 Live Analytics</button>
+        <button class="admin-tab-btn" data-tab="tabAnnounce">📢 Announcement</button>
+        <button class="admin-tab-btn" data-tab="tabHero">🏷️ Hero CMS</button>
+        <button class="admin-tab-btn" data-tab="tabProducts">💍 Products Manager</button>
+        <button class="admin-tab-btn" data-tab="tabMedia">🎬 Media & Videos</button>
+        <button class="admin-tab-btn" data-tab="tabSettings">⚙️ Global Settings</button>
+      </div>
+
+      <!-- Tab 1: Analytics -->
+      <div class="admin-panel-section active" id="tabAnalytics">
+        <h4 style="margin-bottom:10px;">Live Store Performance</h4>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px; margin-bottom:20px;">
+          <div style="background:var(--soft-pink); padding:20px; border-radius:10px; text-align:center;">
+            <h2 id="statVisits" style="font-size:2rem; color:var(--rose-gold-dark);">0</h2>
+            <p style="font-size:0.85rem; font-weight:600;">Total Website Visits</p>
+          </div>
+          <div style="background:var(--soft-pink); padding:20px; border-radius:10px; text-align:center;">
+            <h2 id="statClicks" style="font-size:2rem; color:var(--rose-gold-dark);">0</h2>
+            <p style="font-size:0.85rem; font-weight:600;">WhatsApp Order Clicks</p>
+          </div>
+        </div>
+        <button id="resetStatsBtn" style="background:#d9534f; color:#fff; border:none; padding:8px 14px; border-radius:6px; cursor:pointer; font-size:0.82rem;">Reset Counters</button>
+      </div>
+
+      <!-- Tab 2: Announcement Bar -->
+      <div class="admin-panel-section" id="tabAnnounce">
+        <h4 style="margin-bottom:10px;">Top Announcement Bar</h4>
+        <div class="form-group">
+          <label>Announcement Text</label>
+          <input type="text" id="adminAnnounceText" />
+        </div>
+        <div class="form-group">
+          <label>Show Announcement Bar?</label>
+          <select id="adminAnnounceShow">
+            <option value="yes">Yes, Show</option>
+            <option value="no">No, Hide</option>
+          </select>
+        </div>
+        <button id="saveAnnounceBtn" class="btn-gold" style="padding:10px 20px;">Save Announcement</button>
+      </div>
+
+      <!-- Tab 3: Hero CMS -->
+      <div class="admin-panel-section" id="tabHero">
+        <h4 style="margin-bottom:10px;">Hero Banner Text Control</h4>
+        <div class="form-group">
+          <label>Hero Badge</label>
+          <input type="text" id="adminHeroBadge" />
+        </div>
+        <div class="form-group">
+          <label>Main Heading</label>
+          <input type="text" id="adminHeroHeading" />
+        </div>
+        <div class="form-group">
+          <label>Description Paragraph</label>
+          <textarea id="adminHeroDesc" rows="3"></textarea>
+        </div>
+        <button id="saveHeroBtn" class="btn-gold" style="padding:10px 20px;">Save Hero Text</button>
+      </div>
+
+      <!-- Tab 4: Products Manager -->
+      <div class="admin-panel-section" id="tabProducts">
+        <h4 style="margin-bottom:10px;">Add / Edit / Delete Products</h4>
+        <div style="background:#FAF7F6; padding:15px; border-radius:8px; margin-bottom:20px; border:1px solid var(--border-color);">
+          <h5 id="formProductTitleMode" style="margin-bottom:10px; color:var(--deep-plum);">Add New Product</h5>
+          <input type="hidden" id="editProductIndex" value="-1">
+          <div class="form-group">
+            <label>Product Name</label>
+            <input type="text" id="prodName" placeholder="e.g. Victorian Pearl Choker">
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+            <div class="form-group">
+              <label>Final Price (₹)</label>
+              <input type="text" id="prodPrice" placeholder="₹899">
+            </div>
+            <div class="form-group">
+              <label>Original Price (₹)</label>
+              <input type="text" id="prodOriginal" placeholder="₹1,499">
+            </div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+            <div class="form-group">
+              <label>Category</label>
+              <select id="prodCategory">
+                <option value="necklace">Necklaces & Chokers</option>
+                <option value="earrings">Earrings & Jhumkas</option>
+                <option value="rings">Rings & Bangles</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Badge Tag</label>
+              <input type="text" id="prodBadge" placeholder="Anti-Tarnish">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Upload Image from Device OR Image URL</label>
+            <input type="file" id="prodFile" accept="image/*" style="margin-bottom:8px;">
+            <input type="text" id="prodImgUrl" placeholder="https://images.unsplash.com/...">
+          </div>
+          <button id="saveProductBtn" class="btn-gold" style="padding:10px 20px;">Save Product</button>
+        </div>
+        <div id="adminProductList"></div>
+      </div>
+
+      <!-- Tab 5: Media & Videos -->
+      <div class="admin-panel-section" id="tabMedia">
+        <h4 style="margin-bottom:10px;">Instagram & YouTube Media Manager</h4>
+        <div style="background:#FAF7F6; padding:15px; border-radius:8px; margin-bottom:20px; border:1px solid var(--border-color);">
+          <h5 style="margin-bottom:10px; color:var(--deep-plum);">Add Social Reel / Video</h5>
+          <div class="form-group">
+            <label>Title / Caption</label>
+            <input type="text" id="mediaTitle" placeholder="Anti-Tarnish Water Test">
+          </div>
+          <div class="form-group">
+            <label>Image / Thumbnail URL</label>
+            <input type="text" id="mediaImg" placeholder="https://images.unsplash.com/...">
+          </div>
+          <div class="form-group">
+            <label>Target Link (Instagram / YouTube)</label>
+            <input type="text" id="mediaLink" placeholder="https://www.instagram.com/p/...">
+          </div>
+          <button id="saveMediaBtn" class="btn-gold" style="padding:10px 20px;">Add Social Item</button>
+        </div>
+        <div id="adminMediaList"></div>
+      </div>
+
+      <!-- Tab 6: Global Settings -->
+      <div class="admin-panel-section" id="tabSettings">
+        <h4 style="margin-bottom:10px;">Global Configuration</h4>
+        <div class="form-group">
+          <label>WhatsApp Number (Digits only with country code)</label>
+          <input type="text" id="setWhatsApp" value="918097040848" />
+        </div>
+        <div class="form-group">
+          <label>Google Sheet Web App URL (for Lead Capture)</label>
+          <input type="text" id="setSheetUrl" placeholder="https://script.google.com/macros/s/.../exec" />
+        </div>
+        <div class="form-group">
+          <label>Change Admin PIN</label>
+          <input type="password" id="setAdminPin" value="8097" />
+        </div>
+        <button id="saveSettingsBtn" class="btn-gold" style="padding:10px 20px;">Save Global Settings</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JavaScript Application Logic -->
+  <script>
+    // ---------------------------------------------------------
+    // DEFAULT DATA & LOCAL STORAGE MANAGEMENT
+    // ---------------------------------------------------------
+    let appData = JSON.parse(localStorage.getItem('pixie_app_data')) || {
+      whatsapp: "918097040848",
+      sheetUrl: "https://script.google.com/macros/s/AKfycbzKrOUVO77-IoRpfjFrcPNeGE8UP6BTVsfwj44Na1KB_HkqYp-SiYofC7b2zw7d_J2Z_w/exec",
+      adminPin: "2003",
+      visits: 0,
+      clicks: 0,
+      announcement: { show: true, text: "✨ Free Pan-India Shipping on Prepaid Orders over ₹1999 | 100% Anti-Tarnish Assurance ✨" },
+      hero: {
+        badge: "Curated Antique & Anti-Tarnish Collection",
+        heading: "Vintage Luxury That Never Tarnishes",
+        desc: "Step into royal grace with Pixie & Pearls. Every piece is handcrafted with delicate vintage charms, 100% anti-tarnish stainless metals, and luminous pearls designed to keep their golden glow intact forever.",
+        btnText: "Browse Collection & Order"
+      },
+      products: [
+        { name: "Victorian Pearl Choker", price: "₹899", original: "₹1,499", category: "necklace", badge: "Anti-Tarnish", img: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=650&q=80" },
+        { name: "Royal Teardrop Pearl Earrings", price: "₹649", original: "₹1,199", category: "earrings", badge: "Instagram Viral", img: "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=650&q=80" },
+        { name: "Vintage Rose Stone Ring", price: "₹499", original: "₹899", category: "rings", badge: "New Arrival", img: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=650&q=80" },
+        { name: "Royal Antique Pearl Kada", price: "₹799", original: "₹1,399", category: "rings", badge: "Bestseller", img: "https://images.unsplash.com/photo-1611591475819-79b8b730ab8c?auto=format&fit=crop&w=650&q=80" },
+        { name: "Emerald Vintage Stone Pendant", price: "₹599", original: "₹999", category: "necklace", badge: "Anti-Tarnish", img: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=650&q=80" },
+        { name: "Royal Pearl Drop Jhumkas", price: "₹699", original: "₹1,249", category: "earrings", badge: "Trending", img: "https://images.unsplash.com/photo-1629224316810-9d8805b95e76?auto=format&fit=crop&w=650&q=80" }
+      ],
+      socials: [
+        { title: "✨ View on Instagram", img: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=400&q=80", link: "https://www.instagram.com/pixiepearls71?stkn=MWl3eXp4cGFtbmlyYg==" },
+        { title: "💧 Anti-Tarnish Water Test", img: "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=400&q=80", link: "https://www.instagram.com/pixiepearls71?stkn=MWl3eXp4cGFtbmlyYg==" },
+        { title: "👑 Royal Ring Drops", img: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=400&q=80", link: "https://www.instagram.com/pixiepearls71?stkn=MWl3eXp4cGFtbmlyYg==" },
+        { title: "📦 Customer Unboxing", img: "https://images.unsplash.com/photo-1611591475819-79b8b730ab8c?auto=format&fit=crop&w=400&q=80", link: "https://www.youtube.com/@pixiepearls71" }
+      ]
+    };
+
+    function saveAppData() {
+      localStorage.setItem('pixie_app_data', JSON.stringify(appData));
+    }
+
+    // Increment visit counter on load
+    appData.visits = (appData.visits || 0) + 1;
+    saveAppData();
+
+    // ---------------------------------------------------------
+    // RENDER STOREFRONT FROM APP DATA
+    // ---------------------------------------------------------
+    function renderStorefront() {
+      // Announcement
+      const annBar = document.getElementById('announcementBar');
+      if (appData.announcement.show) {
+        annBar.style.display = "block";
+        annBar.textContent = appData.announcement.text;
+      } else {
+        annBar.style.display = "none";
+      }
+
+      // Hero
+      document.getElementById('heroBadgeText').textContent = appData.hero.badge;
+      document.getElementById('heroHeadingText').textContent = appData.hero.heading;
+      document.getElementById('heroDescText').innerHTML = appData.hero.desc;
+      document.getElementById('heroBtnText').textContent = appData.hero.btnText;
+
+      // WhatsApp links
+      const waNum = appData.whatsapp || "918097040848";
+      const defaultMsg = "Hello Pixie & Pearls! ✨ I am visiting your store and would like to know more about your jewellery.";
+      const waURL = `https://wa.me/${waNum}?text=${encodeURIComponent(defaultMsg)}`;
+      document.getElementById('floatingWABtn').href = waURL;
+      document.getElementById('footerWABtn').href = waURL;
+
+      // Render Products
+      const grid = document.getElementById('dynamicProductsGrid');
+      grid.innerHTML = "";
+      appData.products.forEach((p, idx) => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.setAttribute('data-category', p.category);
+        card.innerHTML = `
+          <div class="image-container">
+            <span class="tag-badge">${p.badge}</span>
+            <img src="${p.img}" alt="${p.name}" class="zoomable-img" />
+          </div>
+          <div class="card-content">
+            <h3>${p.name}</h3>
+            <div class="product-features">
+              <span class="feature-tag">Anti-Tarnish</span>
+              <span class="feature-tag">Waterproof</span>
+            </div>
+            <div class="price-row">
+              <span class="final-price">${p.price}</span>
+              <span class="original-price">${p.original}</span>
+            </div>
+            <button class="whatsapp-order-btn" data-title="${p.name}" data-price="${p.price}">
+              <span>💬</span> Order on WhatsApp
+            </button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      // Render Social Media Grid
+      const socialGrid = document.getElementById('dynamicSocialGrid');
+      socialGrid.innerHTML = "";
+      appData.socials.forEach((s) => {
+        const scard = document.createElement('a');
+        scard.href = s.link;
+        scard.target = "_blank";
+        scard.rel = "noopener noreferrer";
+        scard.className = 'social-card';
+        scard.innerHTML = `
+          <div style="width:100%; height:140px; border-radius:8px; overflow:hidden; background:#F3EAE8;">
+            <img src="${s.img}" alt="${s.title}" style="width:100%; height:100%; object-fit:cover;" />
+          </div>
+          <span>${s.title}</span>
+        `;
+        socialGrid.appendChild(scard);
+      });
+
+      bindStorefrontEvents();
+    }
+
+    // ---------------------------------------------------------
+    // STOREFRONT EVENT HANDLERS
+    // ---------------------------------------------------------
+    function bindStorefrontEvents() {
+      // Product WhatsApp Order clicks
+      document.querySelectorAll('.whatsapp-order-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          appData.clicks = (appData.clicks || 0) + 1;
+          saveAppData();
+          const title = btn.getAttribute('data-title');
+          const price = btn.getAttribute('data-price');
+          const text = `Hello Pixie & Pearls! ✨\n\nI want to order this piece:\n🛒 *Product:* ${title}\n🏷️ *Price:* ${price}\n\nPlease share payment details and dispatch time!`;
+          const waNum = appData.whatsapp || "918097040848";
+          window.open(`https://wa.me/${waNum}?text=${encodeURIComponent(text)}`, '_blank');
+        });
+      });
+
+      // Image Zoom Modal
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImg');
+      document.querySelectorAll('.zoomable-img').forEach(img => {
+        img.addEventListener('click', () => {
+          modal.classList.add('show');
+          modalImg.src = img.src;
+        });
+      });
+      modal.addEventListener('click', () => modal.classList.remove('show'));
+    }
+
+    // Filter bar functionality
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const cat = btn.getAttribute('data-category');
+        document.querySelectorAll('.product-card').forEach(card => {
+          if (cat === 'all' || card.getAttribute('data-category') === cat) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Mobile menu toggle
+    const mobToggle = document.getElementById('mobileMenuToggle');
+    const mobDrawer = document.getElementById('mobileDrawer');
+    mobToggle.addEventListener('click', () => {
+      mobDrawer.style.display = mobDrawer.style.display === 'block' ? 'none' : 'block';
+    });
+    document.querySelectorAll('.mob-link').forEach(l => {
+      l.addEventListener('click', () => mobDrawer.style.display = 'none');
+    });
+
+    // ---------------------------------------------------------
+    // GOOGLE SHEET SUBMISSION & CONTACT FORM
+    // ---------------------------------------------------------
+    async function postToGoogleSheet(formDataObj) {
+      if (!appData.sheetUrl) return;
+      try {
+        const bodyParams = new URLSearchParams(formDataObj);
+        await fetch(appData.sheetUrl, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: bodyParams.toString()
+        });
+      } catch (e) {
+        console.error("Sheet sync error", e);
+      }
+    }
+
+    document.getElementById('sendEnquiryBtn').addEventListener('click', async () => {
+      const name = document.getElementById('userName').value.trim();
+      const phone = document.getElementById('userPhone').value.trim();
+      const product = document.getElementById('userProduct').value;
+      const msg = document.getElementById('userMsg').value.trim();
+
+      if (!name || !phone) {
+        alert("Kripya apna Naam aur WhatsApp number bharein!");
+        return;
+      }
+      alert("Enquiry bhej di gayi hai! Shukriya ✨");
+      await postToGoogleSheet({ Timestamp: new Date().toLocaleString(), Name: name, Phone: phone, Product: product, Message: msg });
+      document.getElementById('inquiryWhatsAppForm').reset();
+    });
+
+    document.getElementById('chatWABtn').addEventListener('click', async () => {
+      const name = document.getElementById('userName').value.trim();
+      const phone = document.getElementById('userPhone').value.trim();
+      const product = document.getElementById('userProduct').value;
+      const msg = document.getElementById('userMsg').value.trim();
+
+      if (!name || !phone) {
+        alert("Kripya apna Naam aur WhatsApp number bharein!");
+        return;
+      }
+      await postToGoogleSheet({ Timestamp: new Date().toLocaleString(), Name: name, Phone: phone, Product: product, Message: msg });
+      const text = `Hello Pixie & Pearls! ✨\n\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n💍 *Product:* ${product}\n📝 *Message:* ${msg || 'None'}`;
+      const waNum = appData.whatsapp || "918097040848";
+      window.open(`https://wa.me/${waNum}?text=${encodeURIComponent(text)}`, '_blank');
+    });
+
+    // ---------------------------------------------------------
+    // SECRET FAIRY ADMIN ACCESS & DASHBOARD CONTROLS
+    // ---------------------------------------------------------
+    let logoClicks = 0;
+    const brandLogo = document.getElementById('brandLogoTrigger');
+    brandLogo.addEventListener('click', (e) => {
+      logoClicks++;
+      if (logoClicks >= 5) {
+        e.preventDefault();
+        logoClicks = 0;
+        promptAdminLogin();
+      }
+      setTimeout(() => logoClicks = 0, 3000);
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && e.shiftKey && e.code === 'KeyF') {
+        e.preventDefault();
+        promptAdminLogin();
+      }
+    });
+
+    if (window.location.hash === '#fairyadmin') {
+      window.location.hash = '';
+      setTimeout(promptAdminLogin, 500);
+    }
+
+    function promptAdminLogin() {
+      const pin = prompt("Enter Fairy Admin PIN:");
+      if (pin === (appData.adminPin || "2003")) {
+        openAdminDashboard();
+      } else if (pin !== null) {
+        alert("Incorrect PIN!");
+      }
+    }
+
+    const adminModal = document.getElementById('adminModal');
+    document.getElementById('closeAdminModal').addEventListener('click', () => adminModal.classList.remove('show'));
+
+    function openAdminDashboard() {
+      adminModal.classList.add('show');
+      refreshAdminUI();
+    }
+
+    // Admin Tabs Switching
+    document.querySelectorAll('.admin-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.admin-tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.admin-panel-section').forEach(s => s.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.getAttribute('data-tab')).classList.add('active');
+      });
+    });
+
+    function refreshAdminUI() {
+      // Analytics
+      document.getElementById('statVisits').textContent = appData.visits || 0;
+      document.getElementById('statClicks').textContent = appData.clicks || 0;
+
+      // Announcement
+      document.getElementById('adminAnnounceText').value = appData.announcement.text;
+      document.getElementById('adminAnnounceShow').value = appData.announcement.show ? 'yes' : 'no';
+
+      // Hero
+      document.getElementById('adminHeroBadge').value = appData.hero.badge;
+      document.getElementById('adminHeroHeading').value = appData.hero.heading;
+      document.getElementById('adminHeroDesc').value = appData.hero.desc;
+
+      // Settings
+      document.getElementById('setWhatsApp').value = appData.whatsapp;
+      document.getElementById('setSheetUrl').value = appData.sheetUrl;
+      document.getElementById('setAdminPin').value = appData.adminPin;
+
+      renderAdminProductList();
+      renderAdminMediaList();
+    }
+
+    // Save Announcement
+    document.getElementById('saveAnnounceBtn').addEventListener('click', () => {
+      appData.announcement.text = document.getElementById('adminAnnounceText').value;
+      appData.announcement.show = document.getElementById('adminAnnounceShow').value === 'yes';
+      saveAppData();
+      renderStorefront();
+      alert("Announcement saved successfully! ✨");
+    });
+
+    // Save Hero
+    document.getElementById('saveHeroBtn').addEventListener('click', () => {
+      appData.hero.badge = document.getElementById('adminHeroBadge').value;
+      appData.hero.heading = document.getElementById('adminHeroHeading').value;
+      appData.hero.desc = document.getElementById('adminHeroDesc').value;
+      saveAppData();
+      renderStorefront();
+      alert("Hero section updated! ✨");
+    });
+
+    // Save Global Settings
+    document.getElementById('saveSettingsBtn').addEventListener('click', () => {
+      appData.whatsapp = document.getElementById('setWhatsApp').value;
+      appData.sheetUrl = document.getElementById('setSheetUrl').value;
+      appData.adminPin = document.getElementById('setAdminPin').value;
+      saveAppData();
+      renderStorefront();
+      alert("Global settings updated! ✨");
+    });
+
+    // Reset Stats
+    document.getElementById('resetStatsBtn').addEventListener('click', () => {
+      appData.visits = 0;
+      appData.clicks = 0;
+      saveAppData();
+      refreshAdminUI();
+      alert("Counters reset!");
+    });
+
+    // Product Manager (Add/Edit)
+    document.getElementById('saveProductBtn').addEventListener('click', () => {
+      const name = document.getElementById('prodName').value.trim();
+      const price = document.getElementById('prodPrice').value.trim();
+      const original = document.getElementById('prodOriginal').value.trim();
+      const category = document.getElementById('prodCategory').value;
+      const badge = document.getElementById('prodBadge').value.trim() || "Anti-Tarnish";
+      const fileInput = document.getElementById('prodFile');
+      const imgUrlInput = document.getElementById('prodImgUrl').value.trim();
+      const editIdx = parseInt(document.getElementById('editProductIndex').value);
+
+      if (!name || !price) {
+        alert("Please enter product name and price.");
+        return;
+      }
+
+      function finishSave(imgSrc) {
+        const productObj = { name, price, original: original || "₹999", category, badge, img: imgSrc || "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=650&q=80" };
+        if (editIdx >= 0) {
+          appData.products[editIdx] = productObj;
+          document.getElementById('editProductIndex').value = -1;
+          document.getElementById('formProductTitleMode').textContent = "Add New Product";
+        } else {
+          appData.products.push(productObj);
+        }
+        saveAppData();
+        renderStorefront();
+        refreshAdminUI();
+        document.getElementById('prodName').value = "";
+        document.getElementById('prodPrice').value = "";
+        document.getElementById('prodOriginal').value = "";
+        document.getElementById('prodImgUrl').value = "";
+        fileInput.value = "";
+        alert("Product saved successfully! ✨");
+      }
+
+      if (fileInput.files && fileInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          finishSave(e.target.result);
+        };
+        reader.readAsDataURL(fileInput.files[0]);
+      } else {
+        finishSave(imgUrlInput);
+      }
+    });
+
+    function renderAdminProductList() {
+      const list = document.getElementById('adminProductList');
+      list.innerHTML = "<h5 style='margin-bottom:10px;'>Existing Products</h5>";
+      appData.products.forEach((p, idx) => {
+        const item = document.createElement('div');
+        item.style.cssText = "display:flex; justify-content:space-between; align-items:center; background:#FFF; padding:10px; margin-bottom:8px; border-radius:6px; border:1px solid var(--border-color);";
+        item.innerHTML = `
+          <div style="display:flex; align-items:center; gap:10px;">
+            <img src="${p.img}" style="width:40px; height:40px; object-fit:cover; border-radius:4px;" />
+            <div><strong>${p.name}</strong><br><small>${p.price} (${p.category})</small></div>
+          </div>
+          <div>
+            <button onclick="editProduct(${idx})" style="background:#f0ad4e; color:#fff; border:none; padding:5px 10px; border-radius:4px; cursor:pointer; font-size:0.75rem; margin-right:5px;">Edit</button>
+            <button onclick="deleteProduct(${idx})" style="background:#d9534f; color:#fff; border:none; padding:5px 10px; border-radius:4px; cursor:pointer; font-size:0.75rem;">Delete</button>
+          </div>
+        `;
+        list.appendChild(item);
+      });
+    }
+
+    window.editProduct = function(idx) {
+      const p = appData.products[idx];
+      document.getElementById('prodName').value = p.name;
+      document.getElementById('prodPrice').value = p.price;
+      document.getElementById('prodOriginal').value = p.original;
+      document.getElementById('prodCategory').value = p.category;
+      document.getElementById('prodBadge').value = p.badge;
+      document.getElementById('prodImgUrl').value = p.img.startsWith('data:') ? '' : p.img;
+      document.getElementById('editProductIndex').value = idx;
+      document.getElementById('formProductTitleMode').textContent = "Edit Product #" + (idx + 1);
+    };
+
+    window.deleteProduct = function(idx) {
+      if (confirm("Delete this product?")) {
+        appData.products.splice(idx, 1);
+        saveAppData();
+        renderStorefront();
+        refreshAdminUI();
+      }
+    };
+
+    // Media Manager
+    document.getElementById('saveMediaBtn').addEventListener('click', () => {
+      const title = document.getElementById('mediaTitle').value.trim();
+      const img = document.getElementById('mediaImg').value.trim();
+      const link = document.getElementById('mediaLink').value.trim();
+      if (!title || !img) {
+        alert("Provide title and image URL.");
+        return;
+      }
+      appData.socials.push({ title, img, link: link || "https://www.instagram.com/pixiepearls71?stkn=MWl3eXp4cGFtbmlyYg==" });
+      saveAppData();
+      renderStorefront();
+      refreshAdminUI();
+      document.getElementById('mediaTitle').value = "";
+      document.getElementById('mediaImg').value = "";
+      document.getElementById('mediaLink').value = "";
+      alert("Social item added!");
+    });
+
+    function renderAdminMediaList() {
+      const list = document.getElementById('adminMediaList');
+      list.innerHTML = "<h5 style='margin-bottom:10px;'>Existing Social Items</h5>";
+      appData.socials.forEach((s, idx) => {
+        const item = document.createElement('div');
+        item.style.cssText = "display:flex; justify-content:space-between; align-items:center; background:#FFF; padding:10px; margin-bottom:8px; border-radius:6px; border:1px solid var(--border-color);";
+        item.innerHTML = `
+          <div style="display:flex; align-items:center; gap:10px;">
+            <img src="${s.img}" style="width:40px; height:40px; object-fit:cover; border-radius:4px;" />
+            <div><strong>${s.title}</strong></div>
+          </div>
+          <button onclick="deleteMedia(${idx})" style="background:#d9534f; color:#fff; border:none; padding:5px 10px; border-radius:4px; cursor:pointer; font-size:0.75rem;">Delete</button>
+        `;
+        list.appendChild(item);
+      });
+    }
+
+    window.deleteMedia = function(idx) {
+      appData.socials.splice(idx, 1);
+      saveAppData();
+      renderStorefront();
+      refreshAdminUI();
+    };
+
+    // Initial load
+    renderStorefront();
+  </script>
+</body>
+</html>
