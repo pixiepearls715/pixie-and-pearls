@@ -13,7 +13,7 @@
 
 <body>
 
-    <!-- Top Navbar -->
+    <!-- Top Navbar (Admin button removed) -->
     <header class="navbar">
         <div class="logo">Pixie & Pearls</div>
         <nav>
@@ -23,7 +23,6 @@
             <a href="#shorts">Shorts</a>
             <a href="#staff">Stylists</a>
             <a href="#contact">Contact</a>
-            <a href="/admin.html" class="admin-badge">Admin Panel</a>
         </nav>
     </header>
 
@@ -33,7 +32,6 @@
             <h1 id="hero-heading" class="serif-font">Loading...</h1>
             <p id="hero-para" class="hero-text">Loading...</p>
 
-            <!-- Praise / USP Callout Bar -->
             <div class="praise-box" id="hero-praise">
                 Loading...
             </div>
@@ -58,7 +56,7 @@
         </div>
     </section>
 
-    <!-- 3. Collection Section (No Price, No Buy Button, Direct WhatsApp) -->
+    <!-- 3. Collection Section -->
     <section class="section" id="collection">
         <div class="container">
             <h2 id="col-title" class="serif-font section-title text-center">Collection</h2>
@@ -67,7 +65,7 @@
         </div>
     </section>
 
-    <!-- 4. Instagram Reels Section (9:16 Vertical Ratio) -->
+    <!-- 4. Instagram Reels Section -->
     <section class="section bg-soft" id="reels">
         <div class="container">
             <h2 id="reels-title" class="serif-font section-title text-center">Instagram Reels</h2>
@@ -76,7 +74,7 @@
         </div>
     </section>
 
-    <!-- 5. YouTube Shorts Section (9:16 Vertical Ratio) -->
+    <!-- 5. YouTube Shorts Section -->
     <section class="section" id="shorts">
         <div class="container">
             <h2 id="shorts-title" class="serif-font section-title text-center">YouTube Shorts</h2>
@@ -94,7 +92,7 @@
         </div>
     </section>
 
-    <!-- 7. Contact Form (Direct WhatsApp Lead) -->
+    <!-- 7. Contact Form -->
     <section class="section" id="contact">
         <div class="container narrow-container">
             <div class="contact-box">
@@ -132,18 +130,15 @@
             const res = await fetch('/api/content');
             siteData = await res.json();
 
-            // Hero
             document.getElementById('hero-heading').innerText = siteData.heroHeading;
             document.getElementById('hero-para').innerText = siteData.heroParagraph;
             document.getElementById('hero-praise').innerText = siteData.heroPraise;
             document.getElementById('hero-wa').href = `https://wa.me/${siteData.whatsappNumber}?text=${encodeURIComponent('Hello Pixie & Pearls, I want to inquire about jewellery!')}`;
 
-            // Catalogue
             document.getElementById('cat-title').innerText = siteData.catalogueTitle;
             document.getElementById('cat-desc').innerText = siteData.catalogueDesc;
             document.getElementById('cat-btn').href = siteData.catalogueLink;
 
-            // Collection
             document.getElementById('col-title').innerText = siteData.collectionTitle;
             document.getElementById('col-desc').innerText = siteData.collectionDesc;
             document.getElementById('product-container').innerHTML = siteData.products.map(p => `
@@ -161,7 +156,6 @@
         </div>
       `).join('');
 
-            // Reels
             document.getElementById('reels-title').innerText = siteData.reelsTitle;
             document.getElementById('reels-desc').innerText = siteData.reelsDesc;
             document.getElementById('reels-container').innerHTML = siteData.reels.map(r => `
@@ -170,7 +164,6 @@
         </div>
       `).join('');
 
-            // Shorts
             document.getElementById('shorts-title').innerText = siteData.shortsTitle;
             document.getElementById('shorts-desc').innerText = siteData.shortsDesc;
             document.getElementById('shorts-container').innerHTML = siteData.shorts.map(s => `
@@ -179,7 +172,6 @@
         </div>
       `).join('');
 
-            // Staff
             document.getElementById('staff-title').innerText = siteData.staffTitle;
             document.getElementById('staff-desc').innerText = siteData.staffDesc;
             document.getElementById('staff-container').innerHTML = siteData.staff.map(m => `
@@ -191,7 +183,6 @@
         </div>
       `).join('');
 
-            // Form
             document.getElementById('form-title').innerText = siteData.formTitle;
             document.getElementById('form-desc').innerText = siteData.formDesc;
         }

@@ -4,7 +4,6 @@ async function loadAdminData() {
     const res = await fetch('/api/content');
     appState = await res.json();
 
-    // Populate Base Fields
     document.getElementById('heroHeading').value = appState.heroHeading || '';
     document.getElementById('heroParagraph').value = appState.heroParagraph || '';
     document.getElementById('heroPraise').value = appState.heroPraise || '';
@@ -35,7 +34,6 @@ async function loadAdminData() {
     renderStaff();
 }
 
-/* --- Products (Edit, Update, Delete) --- */
 function renderProducts() {
     const container = document.getElementById('product-admin-list');
     container.innerHTML = appState.products.map((p, idx) => `
@@ -73,7 +71,6 @@ function deleteProduct(index) {
     }
 }
 
-/* --- Reels (Edit & Delete) --- */
 function renderReels() {
     const container = document.getElementById('reels-admin-list');
     container.innerHTML = appState.reels.map((r, idx) => `
@@ -97,7 +94,6 @@ function deleteReel(index) {
     renderReels();
 }
 
-/* --- Shorts (Edit & Delete) --- */
 function renderShorts() {
     const container = document.getElementById('shorts-admin-list');
     container.innerHTML = appState.shorts.map((s, idx) => `
@@ -121,7 +117,6 @@ function deleteShort(index) {
     renderShorts();
 }
 
-/* --- Staff (Add, Edit, Delete, Details) --- */
 function renderStaff() {
     const container = document.getElementById('staff-admin-list');
     container.innerHTML = appState.staff.map((m, idx) => `
@@ -139,7 +134,7 @@ function renderStaff() {
       <label>Phone / WhatsApp Number:</label>
       <input type="text" value="${m.phone}" oninput="appState.staff[${idx}].phone = this.value">
 
-      <label>Instagram Handle (e.g. @pixiepearls):</label>
+      <label>Instagram Handle:</label>
       <input type="text" value="${m.instaHandle}" oninput="appState.staff[${idx}].instaHandle = this.value">
     </div>
   `).join('');
@@ -163,8 +158,15 @@ function deleteStaff(index) {
     }
 }
 
-/* --- Save All to Backend --- */
 async function saveAllChanges() {
+    const enteredPassword = document.getElementById('adminPassword').value.trim();
+
+    if (!enteredPassword) {
+        alert("Kripya pehle Admin Password dalein!");
+        document.getElementById('adminPassword').focus();
+        return;
+    }
+
     appState.heroHeading = document.getElementById('heroHeading').value;
     appState.heroParagraph = document.getElementById('heroParagraph').value;
     appState.heroPraise = document.getElementById('heroPraise').value;
@@ -189,16 +191,28 @@ async function saveAllChanges() {
     appState.formTitle = document.getElementById('formTitle').value;
     appState.formDesc = document.getElementById('formDesc').value;
 
-    const res = await fetch('/api/content', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(appState)
-    });
+    // Password ko payload me bhejein
+    const payload = {
+        ...appState,
+        adminPassword: enteredPassword
+    };
 
-    if (res.ok) {
-        alert("Success! All changes have been published to your live page.");
-    } else {
-        alert("Error: Changes could not be saved.");
+    try {
+        const res = await fetch('/api/content', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        const responseData = await res.json();
+
+        if (res.ok) {
+            alert("Success! All changes have been saved to the live site.");
+        } else {
+            alert(responseData.error || "Galat Password! Changes save nahi hue.");
+        }
+    } catch (err) {
+        alert("Network Error: Could not connect to server.");
     }
 }
 

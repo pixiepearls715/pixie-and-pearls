@@ -44,7 +44,7 @@
             <input type="text" id="catalogueLink">
         </div>
 
-        <!-- 3. Collection (Products) Editor with Edit & Delete -->
+        <!-- 3. Collection (Products) Editor -->
         <div class="admin-block">
             <div class="block-flex">
                 <h3>3. Products Collection Settings</h3>
@@ -89,7 +89,7 @@
             <div id="shorts-admin-list" class="items-list"></div>
         </div>
 
-        <!-- 6. Staff / Stylists Editor with Edit & Delete -->
+        <!-- 6. Staff Editor -->
         <div class="admin-block">
             <div class="block-flex">
                 <h3>6. Staff & Stylists Section</h3>
@@ -112,6 +112,13 @@
 
             <label>Form Paragraph:</label>
             <textarea id="formDesc" rows="2"></textarea>
+        </div>
+
+        <!-- 8. Security Password Input -->
+        <div class="admin-block security-box">
+            <h3>Admin Security Verification</h3>
+            <label>Admin Security Password (Zaroori hai):</label>
+            <input type="password" id="adminPassword" placeholder="Enter admin password to save" required>
         </div>
 
         <button type="button" class="btn-save-floating" onclick="saveAllChanges()">Save All Changes</button>
