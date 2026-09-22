@@ -456,3 +456,85 @@ footer {
     width: 100%;
     box-shadow: 0 8px 20px rgba(155, 40, 73, 0.25);
 }
+/* =========================================
+   MOBILE RESPONSIVE TWEAKS (Under 768px)
+   ========================================= */
+@media (max-width: 768px) {
+  /* Navbar adjustments for small screens */
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 1rem 5%;
+  }
+
+  .navbar nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .navbar nav a {
+    margin-left: 0;
+    font-size: 0.85rem;
+  }
+
+  /* Hero Section font scaling */
+  .hero-section {
+    padding: 60px 5% 50px;
+  }
+
+  .hero-wrapper h1 {
+    font-size: 2.1rem; /* Mobile screen par heading fit baithegi */
+  }
+
+  .hero-text {
+    font-size: 1rem;
+  }
+
+  .praise-box {
+    font-size: 0.9rem;
+    padding: 12px 18px;
+    border-radius: 20px;
+  }
+
+  .hero-cta {
+    flex-direction: column; /* Buttons upar-niche aa jayenge */
+    gap: 10px;
+  }
+
+  .btn-pink, .btn-wa {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Section Spacing */
+  .section {
+    padding: 50px 5%;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  /* 9:16 Reels & Shorts mobile view */
+  .video-card {
+    max-width: 100%;
+    height: 480px; /* Mobile screen ke hisab se perfect vertical ratio */
+  }
+
+  /* Admin panel tweaks for mobile editing */
+  .admin-page {
+    padding: 15px 4%;
+  }
+
+  .admin-wrapper {
+    padding: 20px 15px;
+  }
+
+  .admin-nav-bar {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+}
