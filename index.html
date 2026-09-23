@@ -1,1388 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pixie & Pearls | Premium Anti-Tarnish Artificial Jewellery</title>
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-cream: #FAF5F3;
-      --soft-pink: #F9ECE9;
-      --card-bg: #FFFFFF;
-      --rose-gold: #C47B78;
-      --rose-gold-light: #E8C9C7;
-      --rose-gold-dark: #A35855;
-      --deep-plum: #3E1D24;
-      --text-muted: #7E646A;
-      --border-color: #EBD6D3;
-      --whatsapp-green: #25D366;
-      --whatsapp-dark: #1EBE5B;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: var(--bg-cream);
-      color: var(--deep-plum);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    h1, h2, h3, h4, .brand-logo, .vintage-heading {
-      font-family: 'Cormorant Garamond', serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixie & Pearls | Jewellery</title>
 
-    /* Announcement Bar */
-    #announcementBar {
-      background: var(--deep-plum);
-      color: #FFF;
-      text-align: center;
-      padding: 9px 15px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.8px;
-    }
+    <meta name="description"
+        content="Discover premium, skin-friendly anti-tarnish artificial jewellery by Pixie & Pearls.">
 
-    /* Header Navbar */
-    header {
-      position: sticky;
-      top: 0;
-      background: rgba(250, 245, 243, 0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-color);
-      z-index: 99;
-    }
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 16px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .brand-logo {
-      font-size: 1.9rem;
-      font-weight: 700;
-      color: var(--rose-gold-dark);
-      text-decoration: none;
-      letter-spacing: 1.2px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-    }
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 28px;
-      align-items: center;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: var(--deep-plum);
-      font-weight: 500;
-      font-size: 0.92rem;
-      transition: color 0.25s ease;
-    }
-    .nav-links a:hover {
-      color: var(--rose-gold);
-    }
-    .mobile-menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.6rem;
-      cursor: pointer;
-      color: var(--deep-plum);
-    }
-    .mobile-drawer {
-      display: none;
-      background: var(--bg-cream);
-      border-bottom: 1px solid var(--border-color);
-      padding: 18px 20px;
-      text-align: center;
-    }
-    .mobile-drawer a {
-      display: block;
-      padding: 12px 0;
-      color: var(--deep-plum);
-      text-decoration: none;
-      font-weight: 600;
-      border-bottom: 1px solid var(--border-color);
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
-    /* Hero Section */
-    #home {
-      background: radial-gradient(circle at 50% 20%, #FEEFEF 0%, var(--bg-cream) 85%);
-      padding: 85px 20px 75px;
-      text-align: center;
-      border-bottom: 1px solid var(--border-color);
-    }
-    .hero-container {
-      max-width: 820px;
-      margin: 0 auto;
-    }
-    .hero-badge {
-      display: inline-block;
-      text-transform: uppercase;
-      font-size: 0.75rem;
-      letter-spacing: 2.5px;
-      color: var(--rose-gold-dark);
-      font-weight: 700;
-      margin-bottom: 14px;
-      background: rgba(196, 123, 120, 0.12);
-      padding: 6px 18px;
-      border-radius: 30px;
-      border: 1px solid var(--border-color);
-    }
-    .hero-container h1 {
-      font-size: clamp(2.4rem, 5vw, 3.6rem);
-      line-height: 1.2;
-      font-weight: 700;
-      margin-bottom: 18px;
-      color: var(--deep-plum);
-    }
-    .hero-container p {
-      font-size: clamp(1rem, 2vw, 1.15rem);
-      color: var(--text-muted);
-      margin-bottom: 32px;
-      line-height: 1.8;
-    }
-    .hero-action-row {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 38px;
-    }
-    .btn-gold {
-      background: linear-gradient(135deg, var(--rose-gold), var(--rose-gold-dark));
-      color: #fff;
-      padding: 13px 30px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.92rem;
-      transition: all 0.3s;
-      border: none;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .btn-gold:hover {
-      box-shadow: 0 6px 20px rgba(163, 88, 85, 0.35);
-      transform: translateY(-2px);
-    }
-    .btn-insta {
-      background: #FFFFFF;
-      border: 1px solid var(--rose-gold);
-      color: var(--rose-gold-dark);
-      padding: 13px 26px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.92rem;
-      transition: all 0.3s;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .btn-insta:hover {
-      background: var(--soft-pink);
-    }
-    .highlights-row {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-      padding-top: 28px;
-      border-top: 1px dashed var(--border-color);
-    }
-    .highlight-pill {
-      font-size: 0.84rem;
-      font-weight: 600;
-      color: var(--rose-gold-dark);
-    }
-
-    /* General Section Layouts */
-    section {
-      padding: 80px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .section-header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .section-header h2 {
-      font-size: clamp(2.1rem, 4vw, 2.7rem);
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: var(--deep-plum);
-    }
-    .section-header p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    /* Filter Bar */
-    .filter-bar {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 35px;
-      flex-wrap: wrap;
-    }
-    .filter-btn {
-      background: transparent;
-      border: 1px solid var(--border-color);
-      color: var(--deep-plum);
-      padding: 8px 20px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      cursor: pointer;
-      font-family: inherit;
-      transition: all 0.25s;
-    }
-    .filter-btn.active, .filter-btn:hover {
-      background: var(--rose-gold);
-      color: #fff;
-      border-color: var(--rose-gold);
-    }
-
-    /* Products Grid */
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-      gap: 28px;
-    }
-    .product-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 14px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 4px 18px rgba(62, 29, 36, 0.04);
-    }
-    .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(163, 88, 85, 0.12);
-    }
-    .image-container {
-      position: relative;
-      height: 290px;
-      background: #F3EAE8;
-      overflow: hidden;
-    }
-    .image-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-      cursor: zoom-in;
-    }
-    .product-card:hover .image-container img {
-      transform: scale(1.05);
-    }
-    .tag-badge {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: rgba(163, 88, 85, 0.92);
-      color: #FFFFFF;
-      font-size: 0.72rem;
-      font-weight: 600;
-      padding: 4px 12px;
-      border-radius: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .card-content {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-    .card-content h3 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--deep-plum);
-      margin-bottom: 6px;
-    }
-    .product-features {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-bottom: 14px;
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-    .feature-tag {
-      background: var(--soft-pink);
-      padding: 3px 8px;
-      border-radius: 4px;
-      border: 1px solid var(--border-color);
-    }
-    .price-row {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-    .final-price {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--rose-gold-dark);
-    }
-    .original-price {
-      font-size: 0.92rem;
-      text-decoration: line-through;
-      color: #9C8389;
-    }
-    .whatsapp-order-btn {
-      margin-top: auto;
-      background-color: #25D366;
-      color: #FFFFFF;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 16px;
-      border-radius: 8px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      transition: background-color 0.25s, transform 0.2s;
-      border: none;
-      cursor: pointer;
-    }
-    .whatsapp-order-btn:hover {
-      background-color: #1EBE5B;
-    }
-
-    /* Media Sections (Instagram & YouTube) */
-    .media-section-box {
-      background: var(--soft-pink);
-      border-radius: 18px;
-      padding: 45px 25px;
-      margin: 45px auto;
-      border: 1px solid var(--border-color);
-      text-align: center;
-    }
-    .media-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      margin-top: 30px;
-    }
-    .media-card {
-      background: #FFF;
-      border-radius: 12px;
-      padding: 16px;
-      border: 1px solid var(--border-color);
-      text-decoration: none;
-      color: var(--deep-plum);
-      font-weight: 600;
-      font-size: 0.9rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      transition: transform 0.2s;
-    }
-    .media-card:hover {
-      transform: translateY(-3px);
-    }
-
-    /* About Section */
-    .about-box {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 45px;
-      align-items: center;
-    }
-    .about-text h2 {
-      font-size: clamp(2.3rem, 4vw, 2.8rem);
-      margin-bottom: 18px;
-      color: var(--deep-plum);
-    }
-    .about-text p {
-      color: var(--text-muted);
-      margin-bottom: 16px;
-      font-size: 1rem;
-    }
-    .quality-points {
-      list-style: none;
-      margin-top: 18px;
-    }
-    .quality-points li {
-      margin-bottom: 12px;
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 0.95rem;
-    }
-    .about-img-frame {
-      border-radius: 14px;
-      overflow: hidden;
-      border: 6px solid #FFFFFF;
-      box-shadow: 0 12px 35px rgba(163, 88, 85, 0.12);
-    }
-    .about-img-frame img {
-      width: 100%;
-      height: 420px;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* Contact Section */
-    .contact-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1.15fr;
-      gap: 35px;
-      background: var(--card-bg);
-      border-radius: 18px;
-      padding: 40px;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 10px 35px rgba(62, 29, 36, 0.05);
-    }
-    .contact-info-panel h3 {
-      font-size: 1.9rem;
-      margin-bottom: 12px;
-      color: var(--deep-plum);
-    }
-    .contact-info-panel p {
-      color: var(--text-muted);
-      margin-bottom: 22px;
-      font-size: 0.95rem;
-    }
-    .info-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 16px;
-      font-size: 0.95rem;
-    }
-    .info-icon {
-      width: 40px;
-      height: 40px;
-      background: var(--soft-pink);
-      color: var(--rose-gold-dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-    }
-    .form-group {
-      margin-bottom: 16px;
-    }
-    .form-group label {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 6px;
-      color: var(--deep-plum);
-    }
-    .form-group input, .form-group textarea, .form-group select {
-      width: 100%;
-      padding: 12px 15px;
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      font-family: inherit;
-      font-size: 0.92rem;
-      background: #FAF7F6;
-      outline: none;
-    }
-    .form-btn-row {
-      display: flex;
-      gap: 12px;
-      margin-top: 22px;
-    }
-    .form-btn-row button {
-      flex: 1;
-      padding: 13px;
-      border-radius: 30px;
-      font-weight: 600;
-      font-size: 0.92rem;
-      cursor: pointer;
-      border: none;
-      transition: all 0.2s;
-    }
-    .btn-send-enquiry {
-      background: var(--rose-gold-dark);
-      color: #fff;
-    }
-    .btn-send-whatsapp {
-      background: #25D366;
-      color: #fff;
-    }
-
-    /* Floating WhatsApp Button */
-    .floating-whatsapp {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background-color: var(--whatsapp-green);
-      color: #fff;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.9rem;
-      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
-      z-index: 1000;
-      text-decoration: none;
-      transition: transform 0.2s;
-    }
-    .floating-whatsapp:hover {
-      transform: scale(1.08);
-    }
-
-    /* Enhanced Luxury Footer */
-    footer {
-      border-top: 1px solid var(--border-color);
-      padding: 60px 20px 35px;
-      background: #F8EEEB;
-    }
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 35px;
-      margin-bottom: 35px;
-    }
-    .footer-col h4 {
-      font-size: 1.25rem;
-      color: var(--deep-plum);
-      margin-bottom: 14px;
-    }
-    .footer-col ul {
-      list-style: none;
-    }
-    .footer-col ul li {
-      margin-bottom: 10px;
-    }
-    .footer-col ul li a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.92rem;
-      transition: color 0.2s;
-    }
-    .footer-col ul li a:hover {
-      color: var(--rose-gold-dark);
-    }
-    .footer-bottom {
-      text-align: center;
-      border-top: 1px solid var(--border-color);
-      padding-top: 22px;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    /* Admin Modal */
-    #adminModal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.82);
-      z-index: 9999;
-      padding: 20px;
-      overflow-y: auto;
-    }
-    #adminModal.show {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .admin-box {
-      background: #FFF;
-      width: 100%;
-      max-width: 950px;
-      border-radius: 14px;
-      padding: 28px;
-      max-height: 90vh;
-      overflow-y: auto;
-    }
-    .admin-tabs {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 22px;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 12px;
-      flex-wrap: wrap;
-    }
-    .admin-tab-btn {
-      background: var(--bg-cream);
-      border: 1px solid var(--border-color);
-      padding: 9px 15px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.86rem;
-    }
-    .admin-tab-btn.active {
-      background: var(--rose-gold-dark);
-      color: #FFF;
-      border-color: var(--rose-gold-dark);
-    }
-    .admin-panel-section {
-      display: none;
-    }
-    .admin-panel-section.active {
-      display: block;
-    }
-
-    /* Image Zoom Modal */
-    .image-modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.85);
-      z-index: 5000;
-      align-items: center;
-      justify-content: center;
-      padding: 15px;
-    }
-    .image-modal.show {
-      display: flex;
-    }
-    .modal-content-img {
-      max-width: 90%;
-      max-height: 85vh;
-      border-radius: 8px;
-    }
-
-    @media (max-width: 860px) {
-      .about-box, .contact-wrapper {
-        grid-template-columns: 1fr;
-      }
-      .nav-links {
-        display: none;
-      }
-      .mobile-menu-toggle {
-        display: block;
-      }
-    }
-  </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-  <!-- Top Announcement Bar -->
-  <div id="announcementBar">✨ Free Pan-India Shipping on Prepaid Orders over ₹1999 | 100% Anti-Tarnish Finish ✨</div>
+<body oncontextmenu="return false;">
 
-  <!-- Navbar -->
-  <header>
-    <div class="nav-container">
-      <a href="#home" class="brand-logo" id="brandLogoTrigger">
-        Pixie & Pearls
-      </a>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#products">Collection</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Quick Links</a></li>
-      </ul>
-      <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+    <div class="announcement-bar">
+        ✨ Free Shipping on Orders Above ₹1999 | Premium Anti-Tarnish Finish ✨
     </div>
-    <div class="mobile-drawer" id="mobileDrawer">
-      <a href="#home" class="mob-link">Home</a>
-      <a href="#products" class="mob-link">Collection</a>
-      <a href="#about" class="mob-link">About</a>
-      <a href="#contact" class="mob-link">Quick Links</a>
-    </div>
-  </header>
 
-  <!-- Hero Section -->
-  <section id="home">
-    <div class="hero-container">
-      <span class="hero-badge" id="heroBadgeText">Curated Anti-Tarnish Artificial Jewellery</span>
-      <h1 id="heroHeadingText">Exquisite Jewellery That Retains Its Luster</h1>
-      <p id="heroDescText">
-        Embrace timeless elegance with <strong>Pixie & Pearls</strong>. Every piece features advanced anti-tarnish plating and delicate pearls, designed to look pristine wear after wear.
-      </p>
-      <div class="hero-action-row">
-        <a href="#products" class="btn-gold" id="heroBtnText">Explore Collection & Order</a>
-        <a href="https://www.instagram.com/pixiepearls71?stkn=MWl3eXp4cGFtbmlyYg==" target="_blank" rel="noopener noreferrer" class="btn-insta">
-          <span>📸</span> Explore @pixiepearls71
-        </a>
-      </div>
-      <div class="highlights-row">
-        <div class="highlight-pill">🛡️ Premium Anti-Tarnish Coating</div>
-        <div class="highlight-pill">🌸 Skin-Safe & Hypoallergenic</div>
-        <div class="highlight-pill">✨ Heritage Aesthetic</div>
-        <div class="highlight-pill">📦 Safe Pan-India Delivery</div>
-      </div>
-    </div>
-  </section>
+    <header class="navbar">
+        <div class="logo">Pixie & Pearls</div>
+        <nav>
+            <a href="#why-us">Why Choose Us</a>
+            <a href="#reels">Instagram Reels</a>
+            <a href="#videos">YouTube Videos</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+        <a href="https://wa.me/918097040848?text=Hello%20Pixie%20%26%20Pearls,%20I%20want%20to%20place%20an%20order!"
+            target="_blank" class="nav-btn-wa">Order On WhatsApp</a>
+    </header>
 
-  <!-- Collection Section -->
-  <section id="products">
-    <div class="section-header">
-      <h2>Curated Anti-Tarnish Bestsellers</h2>
-      <p>Direct WhatsApp Ordering • No Cart Hassle • Fast Support</p>
-    </div>
-    <div class="filter-bar">
-      <button class="filter-btn active" data-category="all">All Designs</button>
-      <button class="filter-btn" data-category="necklace">Necklaces </button>
-      <button class="filter-btn" data-category="earrings">Earrings & Jhumkas</button>
-      <button class="filter-btn" data-category="rings">Rings & Bracelets</button>
-    </div>
-    <div class="products-grid" id="dynamicProductsGrid"></div>
-  </section>
+    <section class="hero-section">
+        <div class="hero-content">
+            <span class="hero-tag">Everyday Luxury Jewellery</span>
+            <h1>Timeless Elegance, Modern Style.</h1>
+            <p>Elevate your everyday look with lightweight, skin-friendly, and durable anti-tarnish jewellery crafted
+                for timeless charm.</p>
 
-  <!-- Instagram Reels Section -->
-  <section id="instagramSection">
-    <div class="media-section-box">
-      <span class="hero-badge">Instagram Reels Showcase</span>
-      <h2 style="font-size: 2.3rem; margin-top: 5px; font-family:'Cormorant Garamond',serif;">Watch Our Instagram Reels & Try-Ons</h2>
-      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">Explore our live Instagram reels showcasing anti-tarnish finish and detailed styling.</p>
-      <div class="media-grid" id="dynamicInstagramGrid"></div>
-    </div>
-  </section>
-
-  <!-- YouTube Shorts & Videos Section -->
-  <section id="youtubeSection">
-    <div class="media-section-box" style="background: #FDF4F3;">
-      <span class="hero-badge">YouTube Videos & Shorts</span>
-      <h2 style="font-size: 2.3rem; margin-top: 5px; font-family:'Cormorant Garamond',serif;">Watch Our YouTube Channel Highlights</h2>
-      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">Check out our latest YouTube videos, unboxing shorts, and collection showcases.</p>
-      <div class="media-grid" id="dynamicYoutubeGrid"></div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about">
-    <div class="about-box">
-      <div class="about-text">
-        <span class="hero-badge">Our Craftsmanship</span>
-        <h2>Why Pixie & Pearls?</h2>
-        <p>Traditional artificial jewellery often tarnishes quickly due to skin oils, humidity, and atmospheric exposure. You deserve accessories that maintain their luxurious glow effortlessly.</p>
-        <p>At <strong>Pixie & Pearls</strong>, we specialize in high-grade anti-tarnish artificial jewellery. Our pieces combine heritage charm with superior protective plating so you can enjoy wearing them daily.</p>
-        <ul class="quality-points">
-          <li>✨ <div><strong>Advanced Anti-Tarnish Treatment:</strong> Engineered to resist oxidation and maintain brightness.</div></li>
-          <li>✨ <div><strong>Refined Artisan Finish:</strong> Detailed craftsmanship inspired by classic ornamental design.</div></li>
-          <li>✨ <div><strong>Hypoallergenic Material:</strong> Gentle on sensitive skin for all-day comfort.</div></li>
-        </ul>
-      </div>
-      <div class="about-img-frame">
-        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80" alt="Pixie and Pearls Anti-Tarnish Jewellery Showcase" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact & Quick Links Section -->
-  <section id="contact">
-    <div class="contact-wrapper">
-      <div class="contact-info-panel">
-        <span class="hero-badge">Customer Support</span>
-        <h3>Get in Touch with Us</h3>
-        <p>Have questions regarding orders, custom gift boxes, or bulk enquiries? Connect with Fairy directly via our official channels.</p>
-        <div class="info-item">
-          <div class="info-icon">📸</div>
-          <div><strong>Instagram Handle</strong><br /><a href="https://www.instagram.com/pixiepearls71?stkn=MWl3eXp4cGFtbmlyYg==" target="_blank" rel="noopener noreferrer" style="color: var(--rose-gold-dark); text-decoration: none;">@pixiepearls71</a></div>
+            <div class="hero-buttons">
+                <a href="#reels" class="btn-primary">View Trending Pieces</a>
+                <a href="https://wa.me/918097040848?text=Hi%20Pixie%20%26%20Pearls!%20Need%20catalogue%20details."
+                    target="_blank" class="btn-wa">
+                    Chat Directly (8097040848)
+                </a>
+            </div>
         </div>
-        <div class="info-item">
-          <div class="info-icon">💬</div>
-          <div><strong>WhatsApp Assistance</strong><br /><span>Quick response guaranteed (+91 8097040848)</span></div>
+    </section>
+
+    <section class="section" id="why-us">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="serif-title">Why Choose Pixie & Pearls?</h2>
+                <p>Finely crafted designs tailored for modern styling and long-lasting elegance.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>Anti-Tarnish Polish</h3>
+                    <p>High-grade multi-layer coating that resists everyday dullness and maintains its luster.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Hypoallergenic & Safe</h3>
+                    <p>100% skin-safe, nickel-free, and lead-free alloy to keep your skin comfortable all day.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💎</div>
+                    <h3>Lightweight & Durable</h3>
+                    <p>Designed for daily comfort—easy to carry, sturdy build, and effortless to style.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎁</div>
+                    <h3>Aesthetic Packaging</h3>
+                    <p>Delivered in signature protective gift boxes, perfect for self-care or gifting loved ones.</p>
+                </div>
+            </div>
         </div>
-        <div class="info-item">
-          <div class="info-icon">📦</div>
-          <div><strong>Pan-India Shipping</strong><br /><span>Secure doorstep delivery across India</span></div>
+    </section>
+
+    <section class="section bg-soft-pink" id="reels">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="serif-title">Trending On Instagram</h2>
+                <p>Real styling inspirations, unboxing glimpses, and aesthetic close-ups.</p>
+            </div>
+
+            <div class="reels-grid">
+                <div class="reel-box">
+                    <iframe src="https://www.instagram.com/reel/Dc1VwNbMfdX/embed" frameborder="0" scrolling="no"
+                        allowtransparency="true"></iframe>
+                </div>
+                <div class="reel-box">
+                    <iframe src="https://www.instagram.com/reel/DcWS0e-MSV_/embed" frameborder="0" scrolling="no"
+                        allowtransparency="true"></iframe>
+                </div>
+                <div class="reel-box">
+                    <iframe src="https://www.instagram.com/reel/DdGLvm1zwKM/embed" frameborder="0" scrolling="no"
+                        allowtransparency="true"></iframe>
+                </div>
+                <div class="reel-box">
+                    <iframe src="https://www.instagram.com/reel/DcjMqlNMcBg/embed" frameborder="0" scrolling="no"
+                        allowtransparency="true"></iframe>
+                </div>
+            </div>
+
+            <div class="center-btn">
+                <a href="https://www.instagram.com/pixiepearls71?stkn=MWl3eXp4cGFtbmlyYg==" target="_blank"
+                    class="btn-insta">
+                    Follow @pixiepearls71 On Instagram
+                </a>
+            </div>
         </div>
-      </div>
-      <form id="inquiryWhatsAppForm">
-        <div class="form-group">
-          <label for="userName">Your Full Name</label>
-          <input type="text" id="userName" placeholder="Enter your name" required />
+    </section>
+
+    <section class="section" id="videos">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="serif-title">YouTube Video Showcase</h2>
+                <p>Watch detailed styling videos and aesthetic collection lookbooks.</p>
+            </div>
+
+            <div class="video-grid">
+                <div class="video-wrapper">
+                    <iframe src="https://youtube.com/embed/sBBFcV7jnUw?si=brUDsbP5EHl54Juf"
+                        title="Pixie and Pearls Styling Guide"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-wrapper">
+                    <iframe src="https://youtube.com/embed/qkJ9EOu0nu8?si=c_L_eJTkuBt6mTGv" title="Pixie and Pearls Unboxing"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="center-btn">
+                <a href="https://youtube.com/@pixiepearls71?si=tcCUbtZzCalb-Enl" target="_blank" class="btn-yt">
+                    Visit Our YouTube Channel
+                </a>
+            </div>
         </div>
-        <div class="form-group">
-          <label for="userPhone">Your WhatsApp Number</label>
-          <input type="text" id="userPhone" placeholder="Enter phone number" required />
+    </section>
+
+    <section class="section bg-soft-pink" id="contact">
+        <div class="container narrow">
+            <div class="form-container">
+                <div class="section-header">
+                    <h2 class="serif-title">Get In Touch</h2>
+                    <p>Fill in your details below to order or enquire directly on WhatsApp.</p>
+                </div>
+
+                <form id="leadForm">
+                    <div class="input-field">
+                        <label>Your Full Name *</label>
+                        <input type="text" name="name" id="custName" placeholder="e.g. Sana Shaikh" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label>Phone / WhatsApp Number *</label>
+                        <input type="tel" name="phone" id="custPhone" placeholder="e.g. 9856324584" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label>Message / Order Requirement *</label>
+                        <textarea name="message" id="custMsg" rows="4"
+                            placeholder="Tell us which jewellery piece you liked or your requirement..."
+                            required></textarea>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="btn-submit">
+                        Submit
+                    </button>
+                </form>
+                <p id="formStatus" class="form-status"></p>
+            </div>
         </div>
-        <div class="form-group">
-          <label for="userProduct">Interested Product / Category</label>
-          <select id="userProduct">
-            <option value="General Enquiry">General Enquiry / Styling Advice</option>
-            <option value="Victorian Pearl Anti-Tarnish Choker">Victorian Pearl Anti-Tarnish Choker</option>
-            <option value="Royal Teardrop Pearl Earrings">Royal Teardrop Pearl Earrings</option>
-            <option value="Anti-Tarnish Stone Ring">Anti-Tarnish Stone Ring</option>
-            <option value="Antique Pearl Kada">Antique Pearl Kada</option>
-            <option value="Gift Combo Box">Gift Combo Box</option>
-          </select>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3 class="serif-title">Pixie & Pearls</h3>
+                <p>Curated everyday artificial jewellery designed with premium anti-tarnish polish.</p>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Connect Directly</h4>
+                <p>WhatsApp & Phone: <strong>+91 8097040848</strong></p>
+                <p>Location: Mumbai, Maharashtra, India</p>
+            </div>
+
+            <div class="footer-socials">
+                <h4>Follow Our Journey</h4>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/pixiepearls71?stkn=MWl3eXp4cGFtbmlyYg==" target="_blank"
+                        class="social-btn insta">Instagram</a>
+                    <a href="https://youtube.com/@pixiepearls71?si=tcCUbtZzCalb-Enl" target="_blank"
+                        class="social-btn yt">YouTube</a>
+                    <a href="https://wa.me/918097040848" target="_blank" class="social-btn wa">WhatsApp</a>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-          <label for="userMsg">Your Message / Delivery Pincode</label>
-          <textarea id="userMsg" rows="3" placeholder="Write your requirement or questions here..."></textarea>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Pixie & Pearls. All rights reserved.</p>
         </div>
-        <div class="form-btn-row">
-          <button type="button" id="sendEnquiryBtn" class="btn-send-enquiry">Send to Contact Sheet</button>
-          <button type="button" id="chatWABtn" class="btn-send-whatsapp">Chat on WhatsApp</button>
-        </div>
-      </form>
-    </div>
-  </section>
+    </footer>
 
-  <!-- Floating WhatsApp -->
-  <a href="#" id="floatingWABtn" class="floating-whatsapp" title="Chat on WhatsApp">💬</a>
-
-  <!-- Image Zoom Modal -->
-  <div id="imageModal" class="image-modal">
-    <img class="modal-content-img" id="modalImg" src="" alt="Enlarged view">
-  </div>
-
-  <!-- Enhanced Luxury Footer -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-col">
-        <h4 style="font-family:'Cormorant Garamond',serif; font-size:1.7rem; color:var(--rose-gold-dark);">Pixie & Pearls</h4>
-        <p style="color: var(--text-muted); font-size: 0.92rem; margin-top: 8px;">Premium Anti-Tarnish Artificial Jewellery crafted for timeless shine and elegance.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Quick Links Directory</h4>
-        <ul>
-          <li><a href="#home">Home Page</a></li>
-          <li><a href="#products">Collections</a></li>
-          <li><a href="#about">About Our Craft</a></li>
-          <li><a href="#contact">Contact & Enquiry Form</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Connect Socially</h4>
-        <ul>
-          <li><a href="https://www.instagram.com/pixiepearls71?stkn=MWl3eXp4cGFtbmlyYg==" target="_blank" rel="noopener noreferrer">Instagram: @pixiepearls71</a></li>
-          <li><a href="https://www.youtube.com/@pixiepearls71" target="_blank" rel="noopener noreferrer">YouTube Channel</a></li>
-          <li><a href="#" id="footerWABtn">WhatsApp Support (+91 8097040848)</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      © 2026 Pixie & Pearls. All rights reserved. Managed by Fairy.
-    </div>
-  </footer>
-
-  <!-- Secret Fairy Admin Dashboard Modal -->
-  <div id="adminModal">
-    <div class="admin-box">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
-        <h3 style="color:var(--deep-plum);">👑 Fairy's Secret Admin Dashboard</h3>
-        <button id="closeAdminModal" style="background:none; border:none; font-size:1.6rem; cursor:pointer;">✕</button>
-      </div>
-
-      <div class="admin-tabs">
-        <button class="admin-tab-btn active" data-tab="tabAnalytics">📊 Live Analytics</button>
-        <button class="admin-tab-btn" data-tab="tabAnnounce">📢 Announcement</button>
-        <button class="admin-tab-btn" data-tab="tabHero">🏷️ Hero CMS</button>
-        <button class="admin-tab-btn" data-tab="tabProducts">💍 Products Manager</button>
-        <button class="admin-tab-btn" data-tab="tabInsta">📸 Instagram Manager</button>
-        <button class="admin-tab-btn" data-tab="tabYoutube">▶️ YouTube Manager</button>
-        <button class="admin-tab-btn" data-tab="tabSettings">⚙️ Global Settings</button>
-      </div>
-
-      <div class="admin-panel-section active" id="tabAnalytics">
-        <h4 style="margin-bottom:12px;">Live Store Performance</h4>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px;">
-          <div style="background:var(--soft-pink); padding:22px; border-radius:10px; text-align:center;">
-            <h2 id="statVisits" style="font-size:2.2rem; color:var(--rose-gold-dark);">1</h2>
-            <p style="font-size:0.86rem; font-weight:600;">Total Website Visits</p>
-          </div>
-          <div style="background:var(--soft-pink); padding:22px; border-radius:10px; text-align:center;">
-            <h2 id="statClicks" style="font-size:2.2rem; color:var(--rose-gold-dark);">0</h2>
-            <p style="font-size:0.86rem; font-weight:600;">WhatsApp Order Clicks</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="admin-panel-section" id="tabAnnounce">
-        <h4 style="margin-bottom:12px;">Top Announcement Bar</h4>
-        <div class="form-group"><label>Announcement Text</label><input type="text" id="adminAnnounceText" /></div>
-        <div class="form-group"><label>Show Announcement Bar?</label><select id="adminAnnounceShow"><option value="yes">Yes, Show</option><option value="no">No, Hide</option></select></div>
-        <button id="saveAnnounceBtn" class="btn-gold" style="padding:11px 22px;">Save & Sync to Cloud</button>
-      </div>
-
-      <div class="admin-panel-section" id="tabHero">
-        <h4 style="margin-bottom:12px;">Hero Banner Text Control</h4>
-        <div class="form-group"><label>Hero Badge</label><input type="text" id="adminHeroBadge" /></div>
-        <div class="form-group"><label>Main Heading</label><input type="text" id="adminHeroHeading" /></div>
-        <div class="form-group"><label>Description Paragraph</label><textarea id="adminHeroDesc" rows="3"></textarea></div>
-        <button id="saveHeroBtn" class="btn-gold" style="padding:11px 22px;">Save & Sync to Cloud</button>
-      </div>
-
-      <div class="admin-panel-section" id="tabProducts">
-        <h4 style="margin-bottom:12px;">Add / Edit / Delete Products</h4>
-        <div style="background:#FAF7F6; padding:18px; border-radius:10px; margin-bottom:22px; border:1px solid var(--border-color);">
-          <h5 id="formProductTitleMode" style="margin-bottom:12px; color:var(--deep-plum);">Add New Anti-Tarnish Product</h5>
-          <input type="hidden" id="editProductIndex" value="-1">
-          <div class="form-group"><label>Product Name</label><input type="text" id="prodName" placeholder="e.g. Victorian Pearl Choker"></div>
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
-            <div class="form-group"><label>Final Price (₹)</label><input type="text" id="prodPrice" placeholder="₹899"></div>
-            <div class="form-group"><label>Original Price (₹)</label><input type="text" id="prodOriginal" placeholder="₹1,499"></div>
-          </div>
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
-            <div class="form-group"><label>Category</label><select id="prodCategory"><option value="necklace">Necklaces & Chokers</option><option value="earrings">Earrings & Jhumkas</option><option value="rings">Rings & Bangles</option></select></div>
-            <div class="form-group"><label>Badge Tag</label><input type="text" id="prodBadge" placeholder="Anti-Tarnish"></div>
-          </div>
-          <div class="form-group"><label>Image URL</label><input type="text" id="prodImgUrl" placeholder="https://images.unsplash.com/..."></div>
-          <button id="saveProductBtn" class="btn-gold" style="padding:11px 22px;">Save & Sync to Cloud</button>
-        </div>
-        <div id="adminProductList"></div>
-      </div>
-
-      <!-- Instagram Manager Tab -->
-      <div class="admin-panel-section" id="tabInsta">
-        <h4 style="margin-bottom:12px;">Instagram Reels Manager</h4>
-        <div style="background:#FAF7F6; padding:18px; border-radius:10px; margin-bottom:22px; border:1px solid var(--border-color);">
-          <h5 style="margin-bottom:12px; color:var(--deep-plum);">Add Instagram Reel / Post</h5>
-          <div class="form-group"><label>Reel Title / Caption</label><input type="text" id="instaTitle" placeholder="Victorian Choker Styling Reel"></div>
-          <div class="form-group"><label>Thumbnail Image URL</label><input type="text" id="instaImg" placeholder="https://images.unsplash.com/..."></div>
-          <div class="form-group"><label>Instagram Reel Link</label><input type="text" id="instaLink" placeholder="https://www.instagram.com/reel/..."></div>
-          <button id="saveInstaBtn" class="btn-gold" style="padding:11px 22px;">Add Instagram Reel</button>
-        </div>
-        <div id="adminInstaList"></div>
-      </div>
-
-      <!-- YouTube Manager Tab -->
-      <div class="admin-panel-section" id="tabYoutube">
-        <h4 style="margin-bottom:12px;">YouTube Shorts & Videos Manager</h4>
-        <div style="background:#FAF7F6; padding:18px; border-radius:10px; margin-bottom:22px; border:1px solid var(--border-color);">
-          <h5 style="margin-bottom:12px; color:var(--deep-plum);">Add YouTube Video / Short</h5>
-          <div class="form-group"><label>Video Title</label><input type="text" id="ytTitle" placeholder="Anti-Tarnish Quality Test Short"></div>
-          <div class="form-group"><label>Thumbnail Image URL</label><input type="text" id="ytImg" placeholder="https://images.unsplash.com/..."></div>
-          <div class="form-group"><label>YouTube Link</label><input type="text" id="ytLink" placeholder="https://www.youtube.com/shorts/..."></div>
-          <button id="saveYtBtn" class="btn-gold" style="padding:11px 22px;">Add YouTube Video</button>
-        </div>
-        <div id="adminYtList"></div>
-      </div>
-
-      <div class="admin-panel-section" id="tabSettings">
-        <h4 style="margin-bottom:12px;">Global Configuration</h4>
-        <div class="form-group"><label>WhatsApp Number</label><input type="text" id="setWhatsApp" value="918097040848" /></div>
-        <div class="form-group"><label>Google Sheet Web App URL (Product & CMS Sync)</label><input type="text" id="setSheetUrl" placeholder="https://script.google.com/macros/s/.../exec" /></div>
-        <div class="form-group"><label>Google Sheet Web App URL for Contact Enquiries</label><input type="text" id="setContactSheetUrl" placeholder="https://script.google.com/macros/s/.../exec (Contact Sheet)" /></div>
-        <div class="form-group"><label>Change Admin PIN</label><input type="password" id="setAdminPin" value="8097" /></div>
-        <button id="saveSettingsBtn" class="btn-gold" style="padding:11px 22px;">Save & Sync to Cloud</button>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- JavaScript Application Logic -->
-  <script>
-    let appData = {
-      whatsapp: "918097040848",
-      sheetUrl: "",
-      contactSheetUrl: "",
-      adminPin: "2003",
-      visits: 1,
-      clicks: 0,
-      announcement: { show: true, text: "✨ Free Pan-India Shipping on Prepaid Orders over ₹999 | 100% Anti-Tarnish Finish ✨" },
-      hero: {
-        badge: "Curated Anti-Tarnish Artificial Jewellery",
-        heading: "Exquisite Jewellery That Retains Its Luster",
-        desc: "Embrace timeless elegance with Pixie & Pearls. Every piece features advanced anti-tarnish plating and delicate pearls, designed to look pristine wear after wear.",
-        btnText: "Explore Collection & Order"
-      },
-      products: [
-        { name: "Victorian Pearl Anti-Tarnish Choker", price: "₹899", original: "₹1,499", category: "necklace", badge: "Anti-Tarnish", img: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=650&q=80" },
-        { name: "Royal Teardrop Pearl Earrings", price: "₹649", original: "₹1,199", category: "earrings", badge: "Bestseller", img: "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=650&q=80" },
-        { name: "Anti-Tarnish Stone Ring", price: "₹499", original: "₹899", category: "rings", badge: "New Arrival", img: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=650&q=80" },
-        { name: "Antique Pearl Kada", price: "₹799", original: "₹1,399", category: "rings", badge: "Anti-Tarnish", img: "https://images.unsplash.com/photo-1611591475819-79b8b730ab8c?auto=format&fit=crop&w=650&q=80" }
-      ],
-      instagramReels: [
-        { title: "✨ Victorian Choker Reel", img: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=400&q=80", link: "https://www.instagram.com/pixiepearls71?stkn=MWl3eXp4cGFtbmlyYg==" },
-        { title: "👑 Royal Jhumka Try-On", img: "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=400&q=80", link: "https://www.instagram.com/pixiepearls71?stkn=MWl3eXp4cGFtbmlyYg==" }
-      ],
-      youtubeVideos: [
-        { title: "🎥 Anti-Tarnish Quality Short", img: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=400&q=80", link: "https://www.youtube.com/@pixiepearls71" },
-        { title: "📦 Customer Unboxing Short", img: "https://images.unsplash.com/photo-1611591475819-79b8b730ab8c?auto=format&fit=crop&w=400&q=80", link: "https://www.youtube.com/@pixiepearls71" }
-      ]
-    };
-
-    async function loadCloudData() {
-      const savedUrl = localStorage.getItem('pixie_sheet_url');
-      const savedContactUrl = localStorage.getItem('pixie_contact_sheet_url');
-      if (savedUrl) appData.sheetUrl = savedUrl;
-      if (savedContactUrl) appData.contactSheetUrl = savedContactUrl;
-
-      if (appData.sheetUrl) {
-        try {
-          const res = await fetch(appData.sheetUrl);
-          const cloudJson = await res.json();
-          if (cloudJson && cloudJson.products) {
-            appData.products = cloudJson.products;
-            appData.announcement = cloudJson.announcement || appData.announcement;
-            appData.hero = cloudJson.hero || appData.hero;
-            appData.whatsapp = cloudJson.whatsapp || appData.whatsapp;
-            appData.instagramReels = cloudJson.instagramReels || appData.instagramReels;
-            appData.youtubeVideos = cloudJson.youtubeVideos || appData.youtubeVideos;
-            appData.visits = cloudJson.visits || appData.visits;
-            appData.clicks = cloudJson.clicks || appData.clicks;
-          }
-        } catch (e) {
-          console.log("Using default data");
-        }
-      }
-      renderStorefront();
-    }
-
-    async function syncToCloud() {
-      if (!appData.sheetUrl) return;
-      try {
-        const formData = new URLSearchParams();
-        formData.append("action", "saveAdminData");
-        formData.append("storeData", JSON.stringify(appData));
-        await fetch(appData.sheetUrl, {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: formData.toString()
-        });
-      } catch (e) {
-        console.error("Cloud sync failed", e);
-      }
-    }
-
-    function renderStorefront() {
-      const annBar = document.getElementById('announcementBar');
-      if (appData.announcement.show) {
-        annBar.style.display = "block";
-        annBar.textContent = appData.announcement.text;
-      } else {
-        annBar.style.display = "none";
-      }
-
-      document.getElementById('heroBadgeText').textContent = appData.hero.badge;
-      document.getElementById('heroHeadingText').textContent = appData.hero.heading;
-      document.getElementById('heroDescText').innerHTML = appData.hero.desc;
-      document.getElementById('heroBtnText').textContent = appData.hero.btnText;
-
-      const waNum = appData.whatsapp || "918097040848";
-      const defaultMsg = "Hello Pixie & Pearls! ✨ I am visiting your store and would like to know more about your anti-tarnish collection.";
-      const waURL = `https://wa.me/${waNum}?text=${encodeURIComponent(defaultMsg)}`;
-      document.getElementById('floatingWABtn').href = waURL;
-      document.getElementById('footerWABtn').href = waURL;
-
-      // Products Grid
-      const grid = document.getElementById('dynamicProductsGrid');
-      grid.innerHTML = "";
-      appData.products.forEach((p) => {
-        const card = document.createElement('div');
-        card.className = 'product-card';
-        card.setAttribute('data-category', p.category);
-        card.innerHTML = `
-          <div class="image-container">
-            <span class="tag-badge">${p.badge}</span>
-            <img src="${p.img}" alt="${p.name}" class="zoomable-img" />
-          </div>
-          <div class="card-content">
-            <h3>${p.name}</h3>
-            <div class="product-features"><span class="feature-tag">Anti-Tarnish</span><span class="feature-tag">Skin Safe</span></div>
-            <div class="price-row"><span class="final-price">${p.price}</span><span class="original-price">${p.original}</span></div>
-            <button class="whatsapp-order-btn" data-title="${p.name}" data-price="${p.price}"><span>💬</span> Order on WhatsApp</button>
-          </div>
-        `;
-        grid.appendChild(card);
-      });
-
-      // Instagram Reels Grid
-      const instaGrid = document.getElementById('dynamicInstagramGrid');
-      instaGrid.innerHTML = "";
-      appData.instagramReels.forEach((s) => {
-        const scard = document.createElement('a');
-        scard.href = s.link;
-        scard.target = "_blank";
-        scard.rel = "noopener noreferrer";
-        scard.className = 'media-card';
-        scard.innerHTML = `
-          <div style="width:100%; height:160px; border-radius:8px; overflow:hidden; background:#F3EAE8;"><img src="${s.img}" alt="${s.title}" style="width:100%; height:100%; object-fit:cover;" /></div>
-          <span>📸 ${s.title}</span>
-        `;
-        instaGrid.appendChild(scard);
-      });
-
-      // YouTube Videos Grid
-      const ytGrid = document.getElementById('dynamicYoutubeGrid');
-      ytGrid.innerHTML = "";
-      appData.youtubeVideos.forEach((y) => {
-        const ycard = document.createElement('a');
-        ycard.href = y.link;
-        ycard.target = "_blank";
-        ycard.rel = "noopener noreferrer";
-        ycard.className = 'media-card';
-        ycard.innerHTML = `
-          <div style="width:100%; height:160px; border-radius:8px; overflow:hidden; background:#F3EAE8;"><img src="${y.img}" alt="${y.title}" style="width:100%; height:100%; object-fit:cover;" /></div>
-          <span>▶️ ${y.title}</span>
-        `;
-        ytGrid.appendChild(ycard);
-      });
-
-      bindStorefrontEvents();
-    }
-
-    function bindStorefrontEvents() {
-      document.querySelectorAll('.whatsapp-order-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          appData.clicks = (appData.clicks || 0) + 1;
-          const title = btn.getAttribute('data-title');
-          const price = btn.getAttribute('data-price');
-          const text = `Hello Pixie & Pearls! ✨\n\nI want to order this piece:\n🛒 *Product:* ${title}\n🏷️ *Price:* ${price}`;
-          const waNum = appData.whatsapp || "918097040848";
-          window.open(`https://wa.me/${waNum}?text=${encodeURIComponent(text)}`, '_blank');
-        });
-      });
-
-      const modal = document.getElementById('imageModal');
-      const modalImg = document.getElementById('modalImg');
-      document.querySelectorAll('.zoomable-img').forEach(img => {
-        img.addEventListener('click', () => {
-          modal.classList.add('show');
-          modalImg.src = img.src;
-        });
-      });
-      modal.addEventListener('click', () => modal.classList.remove('show'));
-    }
-
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const cat = btn.getAttribute('data-category');
-        document.querySelectorAll('.product-card').forEach(card => {
-          if (cat === 'all' || card.getAttribute('data-category') === cat) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-
-    const mobToggle = document.getElementById('mobileMenuToggle');
-    const mobDrawer = document.getElementById('mobileDrawer');
-    mobToggle.addEventListener('click', () => mobDrawer.style.display = mobDrawer.style.display === 'block' ? 'none' : 'block');
-    document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => mobDrawer.style.display = 'none'));
-
-    // Contact Form Submission to Separate Contact Google Sheet URL
-    document.getElementById('sendEnquiryBtn').addEventListener('click', async () => {
-      const name = document.getElementById('userName').value.trim();
-      const phone = document.getElementById('userPhone').value.trim();
-      const product = document.getElementById('userProduct').value;
-      const msg = document.getElementById('userMsg').value.trim();
-
-      if (!name || !phone) { alert("Kripya apna Naam aur WhatsApp number bharein!"); return; }
-      alert("Enquiry contact sheet par bhej di gayi hai! Shukriya ✨");
-      
-      const targetContactSheet = appData.contactSheetUrl || appData.sheetUrl;
-      if (targetContactSheet) {
-        const bodyParams = new URLSearchParams({ action: "lead", Timestamp: new Date().toLocaleString(), Name: name, Phone: phone, Product: product, Message: msg });
-        fetch(targetContactSheet, { method: "POST", mode: "no-cors", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: bodyParams.toString() });
-      }
-      document.getElementById('inquiryWhatsAppForm').reset();
-    });
-
-    document.getElementById('chatWABtn').addEventListener('click', () => {
-      const name = document.getElementById('userName').value.trim();
-      const phone = document.getElementById('userPhone').value.trim();
-      const product = document.getElementById('userProduct').value;
-      const msg = document.getElementById('userMsg').value.trim();
-
-      if (!name || !phone) { alert("Kripya apna Naam aur WhatsApp number bharein!"); return; }
-      const text = `Hello Pixie & Pearls! ✨\n\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n💍 *Product:* ${product}\n📝 *Message:* ${msg || 'None'}`;
-      const waNum = appData.whatsapp || "918097040848";
-      window.open(`https://wa.me/${waNum}?text=${encodeURIComponent(text)}`, '_blank');
-    });
-
-    // Secret Fairy Admin Access
-    let logoClicks = 0;
-    document.getElementById('brandLogoTrigger').addEventListener('click', (e) => {
-      logoClicks++;
-      if (logoClicks >= 5) { e.preventDefault(); logoClicks = 0; promptAdminLogin(); }
-      setTimeout(() => logoClicks = 0, 3000);
-    });
-    window.addEventListener('keydown', (e) => { if (e.ctrlKey && e.shiftKey && e.code === 'KeyF') { e.preventDefault(); promptAdminLogin(); } });
-    if (window.location.hash === '#fairyadmin') { window.location.hash = ''; setTimeout(promptAdminLogin, 500); }
-
-    function promptAdminLogin() {
-      const pin = prompt("Enter Fairy Admin PIN:");
-      if (pin === (appData.adminPin || "8097")) { openAdminDashboard(); } else if (pin !== null) { alert("Incorrect PIN!"); }
-    }
-
-    const adminModal = document.getElementById('adminModal');
-    document.getElementById('closeAdminModal').addEventListener('click', () => adminModal.classList.remove('show'));
-
-    function openAdminDashboard() { adminModal.classList.add('show'); refreshAdminUI(); }
-
-    document.querySelectorAll('.admin-tab-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.admin-tab-btn').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.admin-panel-section').forEach(s => s.classList.remove('active'));
-        btn.classList.add('active');
-        document.getElementById(btn.getAttribute('data-tab')).classList.add('active');
-      });
-    });
-
-    function refreshAdminUI() {
-      document.getElementById('statVisits').textContent = appData.visits || 1;
-      document.getElementById('statClicks').textContent = appData.clicks || 0;
-      document.getElementById('adminAnnounceText').value = appData.announcement.text;
-      document.getElementById('adminAnnounceShow').value = appData.announcement.show ? 'yes' : 'no';
-      document.getElementById('adminHeroBadge').value = appData.hero.badge;
-      document.getElementById('adminHeroHeading').value = appData.hero.heading;
-      document.getElementById('adminHeroDesc').value = appData.hero.desc;
-      document.getElementById('setWhatsApp').value = appData.whatsapp;
-      document.getElementById('setSheetUrl').value = appData.sheetUrl;
-      document.getElementById('setContactSheetUrl').value = appData.contactSheetUrl;
-      document.getElementById('setAdminPin').value = appData.adminPin;
-      renderAdminProductList();
-      renderAdminInstaList();
-      renderAdminYtList();
-    }
-
-    document.getElementById('saveAnnounceBtn').addEventListener('click', async () => {
-      appData.announcement.text = document.getElementById('adminAnnounceText').value;
-      appData.announcement.show = document.getElementById('adminAnnounceShow').value === 'yes';
-      renderStorefront(); await syncToCloud(); alert("Announcement saved & synced live! ✨");
-    });
-
-    document.getElementById('saveHeroBtn').addEventListener('click', async () => {
-      appData.hero.badge = document.getElementById('adminHeroBadge').value;
-      appData.hero.heading = document.getElementById('adminHeroHeading').value;
-      appData.hero.desc = document.getElementById('adminHeroDesc').value;
-      renderStorefront(); await syncToCloud(); alert("Hero section updated & synced live! ✨");
-    });
-
-    document.getElementById('saveSettingsBtn').addEventListener('click', async () => {
-      appData.whatsapp = document.getElementById('setWhatsApp').value;
-      appData.sheetUrl = document.getElementById('setSheetUrl').value;
-      appData.contactSheetUrl = document.getElementById('setContactSheetUrl').value;
-      appData.adminPin = document.getElementById('setAdminPin').value;
-      localStorage.setItem('pixie_sheet_url', appData.sheetUrl);
-      localStorage.setItem('pixie_contact_sheet_url', appData.contactSheetUrl);
-      renderStorefront(); await syncToCloud(); alert("Global settings updated & synced! ✨");
-    });
-
-    // Product Management
-    document.getElementById('saveProductBtn').addEventListener('click', async () => {
-      const name = document.getElementById('prodName').value.trim();
-      const price = document.getElementById('prodPrice').value.trim();
-      const original = document.getElementById('prodOriginal').value.trim();
-      const category = document.getElementById('prodCategory').value;
-      const badge = document.getElementById('prodBadge').value.trim() || "Anti-Tarnish";
-      const img = document.getElementById('prodImgUrl').value.trim();
-      const editIdx = parseInt(document.getElementById('editProductIndex').value);
-
-      if (!name || !price) { alert("Enter name and price."); return; }
-      const pObj = { name, price, original: original || "₹999", category, badge, img: img || "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=650&q=80" };
-      if (editIdx >= 0) { appData.products[editIdx] = pObj; document.getElementById('editProductIndex').value = -1; }
-      else { appData.products.push(pObj); }
-
-      renderStorefront(); await syncToCloud(); refreshAdminUI();
-      document.getElementById('prodName').value = ""; document.getElementById('prodPrice').value = ""; document.getElementById('prodOriginal').value = ""; document.getElementById('prodImgUrl').value = "";
-      alert("Product saved & synced live across all users! ✨");
-    });
-
-    function renderAdminProductList() {
-      const list = document.getElementById('adminProductList');
-      list.innerHTML = "<h5 style='margin-bottom:10px;'>Existing Products</h5>";
-      appData.products.forEach((p, idx) => {
-        const item = document.createElement('div');
-        item.style.cssText = "display:flex; justify-content:space-between; align-items:center; background:#FFF; padding:10px; margin-bottom:8px; border-radius:6px; border:1px solid var(--border-color);";
-        item.innerHTML = `
-          <div style="display:flex; align-items:center; gap:10px;"><img src="${p.img}" style="width:40px; height:40px; object-fit:cover; border-radius:4px;" /><div><strong>${p.name}</strong><br><small>${p.price}</small></div></div>
-          <div><button onclick="editProduct(${idx})" style="background:#f0ad4e; color:#fff; border:none; padding:5px 10px; border-radius:4px; cursor:pointer; font-size:0.75rem; margin-right:5px;">Edit</button><button onclick="deleteProduct(${idx})" style="background:#d9534f; color:#fff; border:none; padding:5px 10px; border-radius:4px; cursor:pointer; font-size:0.75rem;">Delete</button></div>
-        `;
-        list.appendChild(item);
-      });
-    }
-
-    window.editProduct = function(idx) {
-      const p = appData.products[idx];
-      document.getElementById('prodName').value = p.name;
-      document.getElementById('prodPrice').value = p.price;
-      document.getElementById('prodOriginal').value = p.original;
-      document.getElementById('prodCategory').value = p.category;
-      document.getElementById('prodBadge').value = p.badge;
-      document.getElementById('prodImgUrl').value = p.img;
-      document.getElementById('editProductIndex').value = idx;
-    };
-
-    window.deleteProduct = async function(idx) {
-      if (confirm("Delete this product?")) {
-        appData.products.splice(idx, 1);
-        renderStorefront(); await syncToCloud(); refreshAdminUI();
-      }
-    };
-
-    // Instagram Manager
-    document.getElementById('saveInstaBtn').addEventListener('click', async () => {
-      const title = document.getElementById('instaTitle').value.trim();
-      const img = document.getElementById('instaImg').value.trim();
-      const link = document.getElementById('instaLink').value.trim();
-      if (!title || !img) { alert("Provide title and image URL."); return; }
-      appData.instagramReels.push({ title, img, link: link || "https://www.instagram.com/pixiepearls71?stkn=MWl3eXp4cGFtbmlyYg==" });
-      renderStorefront(); await syncToCloud(); refreshAdminUI();
-      document.getElementById('instaTitle').value = ""; document.getElementById('instaImg').value = ""; document.getElementById('instaLink').value = "";
-      alert("Instagram reel added & synced! ✨");
-    });
-
-    function renderAdminInstaList() {
-      const list = document.getElementById('adminInstaList');
-      list.innerHTML = "<h5 style='margin-bottom:10px;'>Existing Instagram Reels</h5>";
-      appData.instagramReels.forEach((s, idx) => {
-        const item = document.createElement('div');
-        item.style.cssText = "display:flex; justify-content:space-between; align-items:center; background:#FFF; padding:10px; margin-bottom:8px; border-radius:6px; border:1px solid var(--border-color);";
-        item.innerHTML = `<div style="display:flex; align-items:center; gap:10px;"><img src="${s.img}" style="width:40px; height:40px; object-fit:cover; border-radius:4px;" /><div><strong>${s.title}</strong></div></div><button onclick="deleteInsta(${idx})" style="background:#d9534f; color:#fff; border:none; padding:5px 10px; border-radius:4px; cursor:pointer; font-size:0.75rem;">Delete</button>`;
-        list.appendChild(item);
-      });
-    }
-
-    window.deleteInsta = async function(idx) {
-      appData.instagramReels.splice(idx, 1);
-      renderStorefront(); await syncToCloud(); refreshAdminUI();
-    };
-
-    // YouTube Manager
-    document.getElementById('saveYtBtn').addEventListener('click', async () => {
-      const title = document.getElementById('ytTitle').value.trim();
-      const img = document.getElementById('ytImg').value.trim();
-      const link = document.getElementById('ytLink').value.trim();
-      if (!title || !img) { alert("Provide title and image URL."); return; }
-      appData.youtubeVideos.push({ title, img, link: link || "https://www.youtube.com/@pixiepearls71" });
-      renderStorefront(); await syncToCloud(); refreshAdminUI();
-      document.getElementById('ytTitle').value = ""; document.getElementById('ytImg').value = ""; document.getElementById('ytLink').value = "";
-      alert("YouTube video added & synced! ✨");
-    });
-
-    function renderAdminYtList() {
-      const list = document.getElementById('adminYtList');
-      list.innerHTML = "<h5 style='margin-bottom:10px;'>Existing YouTube Videos</h5>";
-      appData.youtubeVideos.forEach((y, idx) => {
-        const item = document.createElement('div');
-        item.style.cssText = "display:flex; justify-content:space-between; align-items:center; background:#FFF; padding:10px; margin-bottom:8px; border-radius:6px; border:1px solid var(--border-color);";
-        item.innerHTML = `<div style="display:flex; align-items:center; gap:10px;"><img src="${y.img}" style="width:40px; height:40px; object-fit:cover; border-radius:4px;" /><div><strong>${y.title}</strong></div></div><button onclick="deleteYt(${idx})" style="background:#d9534f; color:#fff; border:none; padding:5px 10px; border-radius:4px; cursor:pointer; font-size:0.75rem;">Delete</button>`;
-        list.appendChild(item);
-      });
-    }
-
-    window.deleteYt = async function(idx) {
-      appData.youtubeVideos.splice(idx, 1);
-      renderStorefront(); await syncToCloud(); refreshAdminUI();
-    };
-
-    loadCloudData();
-  </script>
+    <script src="script.js"></script>
 </body>
+
 </html>
